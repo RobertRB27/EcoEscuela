@@ -14,16 +14,24 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Menu, ChevronDown, Leaf, BookOpen, Users, FileText, Mail } from 'lucide-react';
+import { AboutUsModal } from '@/components/about-us-modal';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
 
   const handleLinkClick = () => {
     setIsOpen(false);
   };
 
+  const handleAboutUsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsAboutUsOpen(true);
+    setIsOpen(false); // Close mobile menu if open
+  };
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <>
+      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -55,6 +63,7 @@ export function Header() {
             
             <a
               href="#sobre-nosotros"
+              onClick={handleAboutUsClick}
               className="text-gray-700 hover:text-emerald-600 transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-sm px-1 py-1"
             >
               Sobre Nosotros
@@ -144,7 +153,7 @@ export function Header() {
                 
                 <a
                   href="#sobre-nosotros"
-                  onClick={handleLinkClick}
+                  onClick={handleAboutUsClick}
                   className="text-lg font-medium text-gray-700 hover:text-emerald-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-sm px-2 py-2"
                 >
                   Sobre Nosotros
@@ -207,7 +216,12 @@ export function Header() {
             </SheetContent>
           </Sheet>
         </div>
-      </div>
-    </header>
+      </header>
+      
+      <AboutUsModal 
+        isOpen={isAboutUsOpen} 
+        onClose={() => setIsAboutUsOpen(false)} 
+      />
+    </>
   );
 }
