@@ -224,6 +224,3 @@ export function Header() {
       />
     </>
   );
-}
-  )
-}
