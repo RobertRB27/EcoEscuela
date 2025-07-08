@@ -1,8 +1,14 @@
+'use client';
+
 import React from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Leaf, BookOpen, Users } from 'lucide-react';
+import { RegistrationForm } from '@/components/registration-form';
 
 export function HeroSection() {
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
   return (
     <section id="inicio" className="relative bg-gradient-to-br from-emerald-50 via-green-50 to-blue-50 py-20 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background Pattern */}
@@ -30,6 +36,7 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
+                onClick={() => setIsRegistrationOpen(true)}
                 size="lg"
                 className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-6 text-lg focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-all duration-200 group"
                 aria-describedby="cta-description"
@@ -111,6 +118,11 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+      
+      <RegistrationForm 
+        isOpen={isRegistrationOpen} 
+        onClose={() => setIsRegistrationOpen(false)} 
+      />
     </section>
   );
 }

@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   Heart, 
@@ -10,6 +13,7 @@ import {
   Shield,
   Target
 } from 'lucide-react';
+import { RegistrationForm } from '@/components/registration-form';
 
 const benefits = [
   {
@@ -63,6 +67,8 @@ const benefits = [
 ];
 
 export function BenefitsSection() {
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50" role="region" aria-labelledby="benefits-heading">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,7 +121,10 @@ export function BenefitsSection() {
               ¿Te unes a nosotros?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-all duration-200 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <button 
+                onClick={() => setIsRegistrationOpen(true)}
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-all duration-200 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
                 Comenzar ahora
               </button>
               <button className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 font-semibold px-8 py-4 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-all duration-200 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
@@ -125,6 +134,11 @@ export function BenefitsSection() {
           </div>
         </div>
       </div>
+      
+      <RegistrationForm 
+        isOpen={isRegistrationOpen} 
+        onClose={() => setIsRegistrationOpen(false)} 
+      />
     </section>
   );
 }
