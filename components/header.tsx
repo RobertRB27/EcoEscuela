@@ -40,6 +40,13 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Navegación principal">
             <a
+              href="#contacto"
+              className="text-gray-700 hover:text-emerald-600 transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-sm px-1 py-1"
+            >
+              Contacto
+            </a>
+            
+            <a
               href="#inicio"
               className="text-gray-700 hover:text-emerald-600 transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-sm px-1 py-1"
             >
@@ -65,7 +72,7 @@ export function Header() {
                   <ChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-48">
+              <DropdownMenuContent align="end" className="w-48">
                 <DropdownMenuItem className="focus:bg-emerald-50">
                   <BookOpen className="mr-2 h-4 w-4" aria-hidden="true" />
                   <span>Guías Educativas</span>
@@ -93,7 +100,7 @@ export function Header() {
                   <ChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-48">
+              <DropdownMenuContent align="end" className="w-48">
                 <DropdownMenuItem className="focus:bg-emerald-50">
                   <Users className="mr-2 h-4 w-4" aria-hidden="true" />
                   <span>Foro</span>
@@ -108,13 +115,6 @@ export function Header() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-
-            <a
-              href="#contacto"
-              className="text-gray-700 hover:text-emerald-600 transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-sm px-1 py-1"
-            >
-              Contacto
-            </a>
           </nav>
 
           {/* Mobile Navigation */}
@@ -126,6 +126,14 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <div className="flex flex-col space-y-6 mt-8">
+                <a
+                  href="#contacto"
+                  onClick={handleLinkClick}
+                  className="text-lg font-medium text-gray-700 hover:text-emerald-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-sm px-2 py-2"
+                >
+                  Contacto
+                </a>
+                
                 <a
                   href="#inicio"
                   onClick={handleLinkClick}
@@ -195,14 +203,6 @@ export function Header() {
                     </a>
                   </div>
                 </div>
-
-                <a
-                  href="#contacto"
-                  onClick={handleLinkClick}
-                  className="text-lg font-medium text-gray-700 hover:text-emerald-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-sm px-2 py-2"
-                >
-                  Contacto
-                </a>
               </div>
             </SheetContent>
           </Sheet>
