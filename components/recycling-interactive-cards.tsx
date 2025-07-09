@@ -3,25 +3,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { 
-  Recycle, 
-  Target,
-  ChevronDown,
-  ChevronRight,
-  Trash2,
-  Bottle,
-  Newspaper,
-  Battery,
-  Lightbulb,
-  Play,
-  Clock,
-  Users,
-  Award,
-  ArrowRight,
-  PlayCircle,
-  Star,
-  Zap
-} from 'lucide-react';
+import { Recycle, Target, ChevronDown, ChevronRight, Trash2, PillBottle as Bottle, Newspaper, Battery, Lightbulb, Play, Clock, Users, Award, ArrowRight, PlayCircle, Star, Zap } from 'lucide-react';
 import {
   Collapsible,
   CollapsibleContent,
