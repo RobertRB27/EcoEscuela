@@ -27,6 +27,7 @@ import { RecyclingInteractiveCards } from '@/components/recycling-interactive-ca
 import { CourseQuiz } from '@/components/course-quiz';
 import { ClimateInteractiveSection } from '@/components/climate-interactive-section';
 import { RenewableEnergySection } from '@/components/renewable-energy-section';
+import { BlogContent } from '@/components/blog-content';
 
 interface MainContentProps {
   activeSection: string;
@@ -450,31 +451,7 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
 
       case 'blog':
         return (
-          <div className="space-y-8 fade-in">
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">Blog</h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-                Artículos, noticias y recursos sobre educación ambiental
-              </p>
-            </div>
-            <Card className="eco-card">
-              <CardHeader>
-                <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/20 rounded-xl flex items-center justify-center mb-4">
-                  <BookOpen className="h-8 w-8 text-purple-600 dark:text-purple-400" aria-hidden="true" />
-                </div>
-                <CardTitle className="dark:text-white text-xl">Artículos Recientes</CardTitle>
-                <CardDescription className="dark:text-gray-400 text-responsive">
-                  Mantente actualizado con las últimas noticias ambientales
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button className="eco-button">
-                  <ArrowRight className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Leer artículos
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          <BlogContent />
         );
 
       case 'contacto':
