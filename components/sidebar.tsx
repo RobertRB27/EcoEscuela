@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { 
@@ -11,8 +11,19 @@ import {
   Leaf,
   BookOpen,
   Mail,
-  Sparkles
+  Sparkles,
+  ChevronDown,
+  ChevronRight,
+  GraduationCap,
+  Users,
+  Settings,
+  HelpCircle
 } from 'lucide-react';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -20,59 +31,121 @@ interface SidebarProps {
   setActiveSection: (section: string) => void;
 }
 
-const navigationItems = [
+interface NavigationSection {
+  id: string;
+  title: string;
+  icon: React.ComponentType<any>;
+  items: NavigationItem[];
+  color: string;
+}
+
+interface NavigationItem {
+  id: string;
+  label: string;
+  icon: React.ComponentType<any>;
+  description: string;
+  color: string;
+}
+
+const navigationSections: NavigationSection[] = [
   {
-    id: 'inicio',
-    label: 'Inicio',
+    id: 'main',
+    title: 'Principal',
     icon: Home,
-    description: 'Panel principal',
-    color: 'text-blue-600 dark:text-blue-400'
+    color: 'text-blue-600 dark:text-blue-400',
+    items: [
+      {
+        id: 'inicio',
+        label: 'Inicio',
+        icon: Home,
+        description: 'Panel principal',
+        color: 'text-blue-600 dark:text-blue-400'
+      }
+    ]
   },
   {
-    id: 'reciclaje',
-    label: 'Reciclaje',
-    icon: Recycle,
-    description: 'Aprende a reciclar',
-    color: 'text-green-600 dark:text-green-400'
+    id: 'learning',
+    title: 'Aprendizaje',
+    icon: GraduationCap,
+    color: 'text-emerald-600 dark:text-emerald-400',
+    items: [
+      {
+        id: 'reciclaje',
+        label: 'Reciclaje',
+        icon: Recycle,
+        description: 'Aprende a reciclar',
+        color: 'text-green-600 dark:text-green-400'
+      },
+      {
+        id: 'energia',
+        label: 'Energía',
+        icon: Zap,
+        description: 'Energías renovables',
+        color: 'text-yellow-600 dark:text-yellow-400'
+      },
+      {
+        id: 'clima',
+        label: 'Clima',
+        icon: CloudRain,
+        description: 'Cambio climático',
+        color: 'text-cyan-600 dark:text-cyan-400'
+      },
+      {
+        id: 'sostenibilidad',
+        label: 'Sostenibilidad',
+        icon: Leaf,
+        description: 'Vida sostenible',
+        color: 'text-emerald-600 dark:text-emerald-400'
+      }
+    ]
   },
   {
-    id: 'energia',
-    label: 'Energía',
-    icon: Zap,
-    description: 'Energías renovables',
-    color: 'text-yellow-600 dark:text-yellow-400'
+    id: 'community',
+    title: 'Comunidad',
+    icon: Users,
+    color: 'text-purple-600 dark:text-purple-400',
+    items: [
+      {
+        id: 'blog',
+        label: 'Blog',
+        icon: BookOpen,
+        description: 'Artículos y noticias',
+        color: 'text-purple-600 dark:text-purple-400'
+      }
+    ]
   },
   {
-    id: 'clima',
-    label: 'Clima',
-    icon: CloudRain,
-    description: 'Cambio climático',
-    color: 'text-cyan-600 dark:text-cyan-400'
-  },
-  {
-    id: 'sostenibilidad',
-    label: 'Sostenibilidad',
-    icon: Leaf,
-    description: 'Vida sostenible',
-    color: 'text-emerald-600 dark:text-emerald-400'
-  },
-  {
-    id: 'blog',
-    label: 'Blog',
-    icon: BookOpen,
-    description: 'Artículos y noticias',
-    color: 'text-purple-600 dark:text-purple-400'
-  },
-  {
-    id: 'contacto',
-    label: 'Contacto',
-    icon: Mail,
-    description: 'Contáctanos',
-    color: 'text-pink-600 dark:text-pink-400'
+    id: 'support',
+    title: 'Soporte',
+    icon: HelpCircle,
+    color: 'text-gray-600 dark:text-gray-400',
+    items: [
+      {
+        id: 'contacto',
+        label: 'Contacto',
+        icon: Mail,
+        description: 'Contáctanos',
+        color: 'text-pink-600 dark:text-pink-400'
+      }
+    ]
   }
 ];
 
 export function Sidebar({ isOpen, activeSection, setActiveSection }: SidebarProps) {
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({
+    main: true,
+    learning: true,
+    community: false,
+    support: false
+  });
+
+  const toggleSection = (sectionId: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [sectionId]: !prev[sectionId]
+    }));
+  };
+
   return (
     <>
       {/* Mobile overlay */}
@@ -108,48 +181,115 @@ export function Sidebar({ isOpen, activeSection, setActiveSection }: SidebarProp
 
           {/* Main Navigation */}
           <nav className="flex-1 p-4 space-y-2 overflow-y-auto" role="menu">
-            <div className="space-y-1">
-              <h3 className="px-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
-                Explora y Aprende
-              </h3>
-              {navigationItems.map((item) => {
-                const IconComponent = item.icon;
-                const isActive = activeSection === item.id;
-                
-                return (
-                  <Button
-                    key={item.id}
-                    variant="ghost"
-                    onClick={() => setActiveSection(item.id)}
-                    className={cn(
-                      "w-full justify-start h-14 px-4 text-left font-medium transition-all duration-200 group rounded-xl",
-                      isActive
-                        ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 shadow-md border-l-4 border-emerald-600 dark:border-emerald-400"
-                        : "text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 hover:shadow-sm"
-                    )}
-                    role="menuitem"
-                    aria-current={isActive ? 'page' : undefined}
+            {navigationSections.map((section) => {
+              const SectionIcon = section.icon;
+              const isOpen = openSections[section.id];
+              
+              return (
+                <div key={section.id} className="space-y-1">
+                  <Collapsible
+                    open={isOpen}
+                    onOpenChange={() => toggleSection(section.id)}
                   >
-                    <IconComponent 
-                      className={cn(
-                        "mr-4 h-5 w-5 transition-colors",
-                        isActive 
-                          ? item.color
-                          : "text-gray-500 dark:text-gray-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
-                      )} 
-                      aria-hidden="true" 
-                    />
-                    <div className="flex-1">
-                      <div className="text-sm font-semibold">{item.label}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-emerald-500 dark:group-hover:text-emerald-400">
-                        {item.description}
+                    <CollapsibleTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        className="w-full justify-between h-10 px-3 text-left font-medium transition-all duration-200 group hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+                        aria-expanded={isOpen}
+                        aria-controls={`section-${section.id}`}
+                      >
+                        <div className="flex items-center space-x-3">
+                          <SectionIcon 
+                            className={`h-4 w-4 ${section.color}`} 
+                            aria-hidden="true" 
+                          />
+                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                            {section.title}
+                          </span>
+                        </div>
+                        {isOpen ? (
+                          <ChevronDown className="h-4 w-4 text-gray-500 transition-transform duration-200" aria-hidden="true" />
+                        ) : (
+                          <ChevronRight className="h-4 w-4 text-gray-500 transition-transform duration-200" aria-hidden="true" />
+                        )}
+                      </Button>
+                    </CollapsibleTrigger>
+                    
+                    <CollapsibleContent 
+                      id={`section-${section.id}`}
+                      className="animate-in slide-in-from-top-2 duration-200"
+                    >
+                      <div className="ml-4 mt-1 space-y-1 border-l-2 border-gray-100 dark:border-gray-700 pl-4">
+                        {section.items.map((item) => {
+                          const ItemIcon = item.icon;
+                          const isActive = activeSection === item.id;
+                          
+                          return (
+                            <Button
+                              key={item.id}
+                              variant="ghost"
+                              onClick={() => setActiveSection(item.id)}
+                              className={cn(
+                                "w-full justify-start h-12 px-3 text-left font-medium transition-all duration-200 group rounded-lg",
+                                isActive
+                                  ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 shadow-sm border-l-2 border-emerald-600 dark:border-emerald-400"
+                                  : "text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400"
+                              )}
+                              role="menuitem"
+                              aria-current={isActive ? 'page' : undefined}
+                            >
+                              <ItemIcon 
+                                className={cn(
+                                  "mr-3 h-4 w-4 transition-colors",
+                                  isActive 
+                                    ? item.color
+                                    : "text-gray-500 dark:text-gray-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
+                                )} 
+                                aria-hidden="true" 
+                              />
+                              <div className="flex-1">
+                                <div className="text-sm font-medium">{item.label}</div>
+                                <div className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-emerald-500 dark:group-hover:text-emerald-400">
+                                  {item.description}
+                                </div>
+                              </div>
+                              {isActive && (
+                                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                              )}
+                            </Button>
+                          );
+                        })}
                       </div>
-                    </div>
-                  </Button>
-                );
-              })}
-            </div>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              );
+            })}
           </nav>
+
+          {/* Progress Section */}
+          <div className="p-4 border-t border-gray-100 dark:border-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Progreso del día
+                </span>
+                <span className="text-sm font-bold text-emerald-600 dark:text-emerald-400">
+                  75%
+                </span>
+              </div>
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-emerald-500 to-green-500 h-2 rounded-full transition-all duration-500"
+                  style={{ width: '75%' }}
+                />
+              </div>
+              <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                <span>3 de 4 lecciones</span>
+                <span>🎯 ¡Casi listo!</span>
+              </div>
+            </div>
+          </div>
 
           {/* Footer */}
           <div className="p-4 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
