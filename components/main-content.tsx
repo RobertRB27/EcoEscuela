@@ -254,9 +254,9 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
                         <div className="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400">
                           <span className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-full">{course.difficulty}</span>
                           <span>{course.duration}</span>
+                          <span>{course.questions} preguntas</span>
                         </div>
                       </CardHeader>
-                          <span>{course.questions} preguntas</span>
                       <CardContent>
                         <Button 
                           className="w-full eco-button group"
