@@ -16,8 +16,24 @@ import {
   Award,
   TrendingUp,
   Play,
-  ArrowRight
+  ArrowRight,
+  Target,
+  ChevronDown,
+  ChevronRight,
+  Trash2,
+  Wine as Bottle,
+  Newspaper,
+  Battery,
+  Lightbulb,
+  Clock,
+  PlayCircle,
+  Star
 } from 'lucide-react';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
 
 interface EcoMainContentProps {
   activeSection: string;
@@ -114,6 +130,8 @@ export function EcoMainContent({ activeSection, sidebarOpen }: EcoMainContentPro
                 Aprende todo sobre el reciclaje y cómo reducir los residuos
               </p>
             </div>
+            
+            {/* Tarjeta 1: Guía Completa de Reciclaje */}
             <Card className="dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
                 <div className="w-16 h-16 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center mb-4">
@@ -124,11 +142,353 @@ export function EcoMainContent({ activeSection, sidebarOpen }: EcoMainContentPro
                   Descubre cómo separar correctamente los residuos y contribuir al cuidado del medio ambiente
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Button className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600">
-                  <ArrowRight className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Comenzar lección
-                </Button>
+              <CardContent className="space-y-4">
+                {/* Desplegable 1: Separación de residuos */}
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-between hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-200"
+                      aria-expanded="false"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
+                          <Target className="h-4 w-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+                        </div>
+                        <span className="font-medium">Separación de residuos</span>
+                      </div>
+                      <ChevronDown className="h-4 w-4 transition-transform duration-200" aria-hidden="true" />
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-4 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="flex items-center space-x-3 p-3 bg-green-100 dark:bg-green-900/20 rounded-lg">
+                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                          <Leaf className="h-4 w-4 text-white" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-900 dark:text-white">Orgánicos</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Restos de comida, hojas</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-3 p-3 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
+                        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                          <Bottle className="h-4 w-4 text-white" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-900 dark:text-white">Plásticos</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Botellas, envases</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-3 p-3 bg-yellow-100 dark:bg-yellow-900/20 rounded-lg">
+                        <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                          <Newspaper className="h-4 w-4 text-white" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-900 dark:text-white">Papel</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Periódicos, cartón</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-3 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                        <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center">
+                          <Trash2 className="h-4 w-4 text-white" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-900 dark:text-white">No reciclables</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Residuos mixtos</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Desplegable 2: Tipos de materiales reciclables */}
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-between hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-200"
+                      aria-expanded="false"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-emerald-100 dark:bg-emerald-900/20 rounded-lg flex items-center justify-center">
+                          <Recycle className="h-4 w-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+                        </div>
+                        <span className="font-medium">Tipos de materiales reciclables</span>
+                      </div>
+                      <ChevronDown className="h-4 w-4 transition-transform duration-200" aria-hidden="true" />
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-4 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-2">
+                          <Bottle className="h-5 w-5 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+                          <h4 className="font-semibold text-gray-900 dark:text-white">Plástico</h4>
+                        </div>
+                        <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 ml-7">
+                          <li>• Botellas de agua y refrescos</li>
+                          <li>• Envases de yogur</li>
+                          <li>• Bolsas de plástico</li>
+                          <li>• Contenedores de alimentos</li>
+                        </ul>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-2">
+                          <Newspaper className="h-5 w-5 text-yellow-600 dark:text-yellow-400" aria-hidden="true" />
+                          <h4 className="font-semibold text-gray-900 dark:text-white">Papel</h4>
+                        </div>
+                        <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 ml-7">
+                          <li>• Periódicos y revistas</li>
+                          <li>• Cajas de cartón</li>
+                          <li>• Papel de oficina</li>
+                          <li>• Libros y cuadernos</li>
+                        </ul>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-2">
+                          <Bottle className="h-5 w-5 text-green-600 dark:text-green-400" aria-hidden="true" />
+                          <h4 className="font-semibold text-gray-900 dark:text-white">Vidrio</h4>
+                        </div>
+                        <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 ml-7">
+                          <li>• Botellas de vidrio</li>
+                          <li>• Frascos de conservas</li>
+                          <li>• Envases de perfumes</li>
+                          <li>• Cristalería doméstica</li>
+                        </ul>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-2">
+                          <Battery className="h-5 w-5 text-purple-600 dark:text-purple-400" aria-hidden="true" />
+                          <h4 className="font-semibold text-gray-900 dark:text-white">Electrónicos</h4>
+                        </div>
+                        <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 ml-7">
+                          <li>• Pilas y baterías</li>
+                          <li>• Teléfonos móviles</li>
+                          <li>• Cables y cargadores</li>
+                          <li>• Electrodomésticos pequeños</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Desplegable 3: Proceso de reciclaje */}
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-between hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-200"
+                      aria-expanded="false"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center">
+                          <Lightbulb className="h-4 w-4 text-purple-600 dark:text-purple-400" aria-hidden="true" />
+                        </div>
+                        <span className="font-medium">Proceso de reciclaje</span>
+                      </div>
+                      <ChevronDown className="h-4 w-4 transition-transform duration-200" aria-hidden="true" />
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-4 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <div className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                          <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span className="text-blue-600 dark:text-blue-400 font-bold">1</span>
+                          </div>
+                          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Recolección</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Los residuos se recogen y transportan a centros de reciclaje</p>
+                        </div>
+                        <div className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                          <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span className="text-green-600 dark:text-green-400 font-bold">2</span>
+                          </div>
+                          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Clasificación</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Los materiales se separan por tipo y calidad</p>
+                        </div>
+                        <div className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                          <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span className="text-purple-600 dark:text-purple-400 font-bold">3</span>
+                          </div>
+                          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Transformación</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Se procesan para crear nuevos productos</p>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 p-4 rounded-lg border border-emerald-200 dark:border-emerald-700">
+                        <div className="flex items-center space-x-3 mb-3">
+                          <PlayCircle className="h-6 w-6 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+                          <h4 className="font-semibold text-gray-900 dark:text-white">Video Educativo</h4>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                          Mira este video para entender mejor el proceso completo de reciclaje
+                        </p>
+                        <Button className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600">
+                          <Play className="mr-2 h-4 w-4" aria-hidden="true" />
+                          Ver Video (5 min)
+                        </Button>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </CardContent>
+            </Card>
+
+            {/* Tarjeta 2: Actividades Prácticas */}
+            <Card className="dark:bg-gray-800 dark:border-gray-700">
+              <CardHeader>
+                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mb-4">
+                  <Play className="h-8 w-8 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+                </div>
+                <CardTitle className="dark:text-white">Actividades Prácticas</CardTitle>
+                <CardDescription className="dark:text-gray-400">
+                  Pon a prueba tus conocimientos con actividades interactivas y divertidas
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {/* Actividad 1: Quiz */}
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-between hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"
+                      aria-expanded="false"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
+                          <Target className="h-4 w-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+                        </div>
+                        <div className="text-left">
+                          <p className="font-medium">Quiz: Separación de residuos</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">15 preguntas • 10 min</p>
+                        </div>
+                      </div>
+                      <ChevronRight className="h-4 w-4 transition-transform duration-200" aria-hidden="true" />
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                          <Clock className="h-4 w-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Duración: 10 minutos</span>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          {[1, 2, 3].map((star) => (
+                            <Star key={star} className="h-4 w-4 text-yellow-500 fill-current" aria-hidden="true" />
+                          ))}
+                          <span className="text-sm text-gray-600 dark:text-gray-400 ml-1">Fácil</span>
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <Users className="h-4 w-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+                          <span className="text-gray-600 dark:text-gray-400">1,234 estudiantes</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Award className="h-4 w-4 text-yellow-600 dark:text-yellow-400" aria-hidden="true" />
+                          <span className="text-gray-600 dark:text-gray-400">+150 puntos</span>
+                        </div>
+                      </div>
+                      
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Demuestra tus conocimientos sobre la separación correcta de residuos. 
+                        Incluye preguntas sobre contenedores, tipos de materiales y buenas prácticas.
+                      </p>
+                      
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600">
+                        <Play className="mr-2 h-4 w-4" aria-hidden="true" />
+                        Comenzar Quiz
+                      </Button>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Actividad 2: Juego interactivo */}
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-between hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors duration-200"
+                      aria-expanded="false"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center">
+                          <Zap className="h-4 w-4 text-green-600 dark:text-green-400" aria-hidden="true" />
+                        </div>
+                        <div className="text-left">
+                          <p className="font-medium">Juego: Clasificador de basura</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">Interactivo • 20 min</p>
+                        </div>
+                      </div>
+                      <ChevronRight className="h-4 w-4 transition-transform duration-200" aria-hidden="true" />
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-700">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                          <Clock className="h-4 w-4 text-green-600 dark:text-green-400" aria-hidden="true" />
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Duración: 20 minutos</span>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          {[1, 2, 3, 4].map((star) => (
+                            <Star key={star} className="h-4 w-4 text-yellow-500 fill-current" aria-hidden="true" />
+                          ))}
+                          <span className="text-sm text-gray-600 dark:text-gray-400 ml-1">Medio</span>
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <Users className="h-4 w-4 text-green-600 dark:text-green-400" aria-hidden="true" />
+                          <span className="text-gray-600 dark:text-gray-400">856 jugadores</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Award className="h-4 w-4 text-yellow-600 dark:text-yellow-400" aria-hidden="true" />
+                          <span className="text-gray-600 dark:text-gray-400">+200 puntos</span>
+                        </div>
+                      </div>
+                      
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Arrastra y suelta diferentes objetos en los contenedores correctos. 
+                        Recibe retroalimentación inmediata y compite con otros estudiantes.
+                      </p>
+                      
+                      <Button className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600">
+                        <Play className="mr-2 h-4 w-4" aria-hidden="true" />
+                        Jugar Ahora
+                      </Button>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Desafío del día */}
+                <div className="bg-gradient-to-r from-emerald-600 to-green-600 dark:from-emerald-700 dark:to-green-700 text-white p-6 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                        <Target className="h-5 w-5 text-white" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">Desafío del día</h4>
+                        <p className="text-emerald-100 text-sm">Separa 5 tipos de residuos en casa</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-emerald-100 text-sm">Recompensa</p>
+                      <p className="font-bold">+50 pts</p>
+                    </div>
+                  </div>
+                  <Button 
+                    variant="secondary" 
+                    className="w-full mt-4 bg-white/20 hover:bg-white/30 text-white border-white/30"
+                  >
+                    Aceptar Desafío
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
