@@ -297,7 +297,7 @@ export function EcoMainContent({ activeSection, sidebarOpen }: EcoMainContentPro
       )}
       role="main"
     >
-      <div className="h-[calc(100vh-4rem)] overflow-y-auto bg-gray-50 dark:bg-gray-900">
+      <div className="h-[calc(100vh-4rem)] overflow-y-auto">
         <div className="p-6 sm:p-8">
           {renderContent()}
         </div>

@@ -71,7 +71,7 @@ export function EcoSidebar({ isOpen, activeSection, setActiveSection }: EcoSideb
       {isOpen && (
         <div 
           className="fixed inset-0 z-40 bg-black/50 lg:hidden"
-          onClick={() => setActiveSection(activeSection)}
+          onClick={() => {}}
         />
       )}
 
