@@ -22,6 +22,7 @@ import {
   Lightbulb,
   Target
 } from 'lucide-react';
+import { RecyclingInteractiveCards } from '@/components/recycling-interactive-cards';
 
 interface MainContentProps {
   activeSection: string;
@@ -180,67 +181,8 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card className="eco-card">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/20 rounded-xl flex items-center justify-center mb-4">
-                    <Recycle className="h-8 w-8 text-green-600 dark:text-green-400" aria-hidden="true" />
-                  </div>
-                  <CardTitle className="dark:text-white text-xl">Guía Completa de Reciclaje</CardTitle>
-                  <CardDescription className="dark:text-gray-400 text-responsive">
-                    Descubre cómo separar correctamente los residuos y contribuir al cuidado del medio ambiente
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <span className="text-sm">Separación de residuos</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                      <span className="text-sm">Tipos de materiales reciclables</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                      <span className="text-sm">Proceso de reciclaje</span>
-                    </div>
-                  </div>
-                  <Button className="w-full mt-6 eco-button">
-                    <ArrowRight className="mr-2 h-4 w-4" aria-hidden="true" />
-                    Comenzar lección
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="eco-card">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/20 rounded-xl flex items-center justify-center mb-4">
-                    <Target className="h-8 w-8 text-blue-600 dark:text-blue-400" aria-hidden="true" />
-                  </div>
-                  <CardTitle className="dark:text-white text-xl">Actividades Prácticas</CardTitle>
-                  <CardDescription className="dark:text-gray-400 text-responsive">
-                    Ejercicios interactivos para poner en práctica lo aprendido sobre reciclaje
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                      <p className="font-medium text-sm">Quiz: Separación de residuos</p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">10 preguntas • 5 min</p>
-                    </div>
-                    <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                      <p className="font-medium text-sm">Juego: Clasificador de basura</p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">Interactivo • 15 min</p>
-                    </div>
-                  </div>
-                  <Button className="w-full mt-6 eco-button">
-                    <Play className="mr-2 h-4 w-4" aria-hidden="true" />
-                    Practicar ahora
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
+            {/* Tarjetas Interactivas */}
+            <RecyclingInteractiveCards />
           </div>
         );
 
