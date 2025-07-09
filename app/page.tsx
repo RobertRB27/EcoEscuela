@@ -1,7 +1,5 @@
-import { EcoLayout } from '@/components/eco-layout';
+import { Layout } from '@/components/layout';
 
 export default function Home() {
-  return (
-    <EcoLayout />
-  );
+  return <Layout />;
 }
