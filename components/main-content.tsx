@@ -57,7 +57,7 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
         {
           id: 1,
           question: '¿En qué contenedor debes depositar las botellas de plástico?',
-          image: 'https://images.unsplash.com/photo-1572012335275-86b4b0c7b6b6?w=400&h=250&fit=crop',
+          image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=250&fit=crop',
           options: [
             'Contenedor verde (vidrio)',
             'Contenedor amarillo (plástico y latas)',
@@ -70,7 +70,7 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
         {
           id: 2,
           question: '¿Cuál de estos materiales NO es reciclable?',
-          image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop',
+          image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=400&h=250&fit=crop',
           options: [
             'Papel de periódico',
             'Botellas de vidrio',
@@ -90,7 +90,7 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
         {
           id: 1,
           question: '¿Cuál es la fuente de energía renovable más abundante en la Tierra?',
-          image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=250&fit=crop',
+          image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=250&fit=crop',
           options: [
             'Energía eólica',
             'Energía solar',
@@ -103,7 +103,7 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
         {
           id: 2,
           question: '¿Qué ventaja tienen las energías renovables sobre los combustibles fósiles?',
-          image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=250&fit=crop',
+          image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=400&h=250&fit=crop',
           options: [
             'Son más baratas de instalar',
             'No producen emisiones de CO2',
@@ -122,29 +122,42 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
       questions: [
         {
           id: 1,
-          question: '¿Cuál es la principal causa del cambio climático actual?',
-          image: 'https://images.unsplash.com/photo-1569163139394-de44cb5894ce?w=400&h=250&fit=crop',
+          question: '¿Cuál es la principal causa del aumento de temperatura global?',
+          image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=250&fit=crop',
           options: [
-            'Variaciones naturales del clima',
-            'Actividad volcánica',
-            'Emisiones de gases de efecto invernadero por actividades humanas',
-            'Cambios en la órbita terrestre'
+            'Actividad solar',
+            'Emisiones de CO2',
+            'Volcanes',
+            'Deforestación'
           ],
-          correctAnswer: 2,
-          explanation: 'Las actividades humanas, especialmente la quema de combustibles fósiles, son la principal causa del cambio climático actual.'
+          correctAnswer: 1,
+          explanation: 'Las emisiones de CO2 por actividades humanas son la principal causa del aumento de temperatura global.'
         },
         {
           id: 2,
-          question: '¿Cuál de estos efectos NO está relacionado con el cambio climático?',
-          image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=250&fit=crop',
+          question: '¿Qué efecto tiene el derretimiento de los glaciares?',
+          image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop',
           options: [
-            'Aumento del nivel del mar',
-            'Derretimiento de glaciares',
-            'Terremotos más frecuentes',
-            'Eventos climáticos extremos'
+            'Enfría los océanos',
+            'Aumenta el nivel del mar',
+            'Reduce las lluvias',
+            'Mejora la pesca'
           ],
-          correctAnswer: 2,
-          explanation: 'Los terremotos no están relacionados con el cambio climático. Son causados por movimientos tectónicos.'
+          correctAnswer: 1,
+          explanation: 'El derretimiento de glaciares contribuye al aumento del nivel del mar, amenazando las costas.'
+        },
+        {
+          id: 3,
+          question: '¿Cuál es la forma más efectiva de reducir tu huella de carbono personal?',
+          image: 'https://images.unsplash.com/photo-1497436072909-f5e4be1713d1?w=400&h=250&fit=crop',
+          options: [
+            'Usar transporte público',
+            'Ahorrar energía en casa',
+            'Reducir el consumo de carne',
+            'Todas las anteriores'
+          ],
+          correctAnswer: 3,
+          explanation: 'La combinación de todas estas acciones es la forma más efectiva de reducir tu huella de carbono.'
         }
       ]
     }
