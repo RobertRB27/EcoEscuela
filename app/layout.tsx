@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { ThemeProvider } from '@/providers/theme-provider';
 
 export const metadata: Metadata = {
   title: 'EcoEscuela - Educación Ambiental para Todos',
@@ -23,7 +24,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
