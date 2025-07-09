@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -23,6 +24,7 @@ import {
   Target
 } from 'lucide-react';
 import { RecyclingInteractiveCards } from '@/components/recycling-interactive-cards';
+import { CourseQuiz } from '@/components/course-quiz';
 
 interface MainContentProps {
   activeSection: string;
@@ -30,7 +32,130 @@ interface MainContentProps {
 }
 
 export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
+  const [activeQuiz, setActiveQuiz] = useState<string | null>(null);
+
+  const handleStartCourse = (courseId: string) => {
+    setActiveQuiz(courseId);
+  };
+
+  const handleCloseQuiz = () => {
+    setActiveQuiz(null);
+  };
+
+  // Course data for quizzes
+  const courseData = {
+    reciclaje: {
+      id: 'reciclaje',
+      title: 'Reciclaje Básico',
+      description: 'Aprende los fundamentos del reciclaje y la separación correcta de residuos',
+      questions: [
+        {
+          id: 1,
+          question: '¿En qué contenedor debes depositar las botellas de plástico?',
+          image: 'https://images.unsplash.com/photo-1572012335275-86b4b0c7b6b6?w=400&h=250&fit=crop',
+          options: [
+            'Contenedor verde (vidrio)',
+            'Contenedor amarillo (plástico y latas)',
+            'Contenedor azul (papel y cartón)',
+            'Contenedor gris (residuos generales)'
+          ],
+          correctAnswer: 1,
+          explanation: 'Las botellas de plástico van en el contenedor amarillo, junto con latas y envases de plástico.'
+        },
+        {
+          id: 2,
+          question: '¿Cuál de estos materiales NO es reciclable?',
+          image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop',
+          options: [
+            'Papel de periódico',
+            'Botellas de vidrio',
+            'Pañales usados',
+            'Latas de aluminio'
+          ],
+          correctAnswer: 2,
+          explanation: 'Los pañales usados no son reciclables debido a su composición y contaminación. Van en residuos generales.'
+        }
+      ]
+    },
+    energia: {
+      id: 'energia',
+      title: 'Energías Renovables',
+      description: 'Descubre las diferentes fuentes de energía limpia y sostenible',
+      questions: [
+        {
+          id: 1,
+          question: '¿Cuál es la fuente de energía renovable más abundante en la Tierra?',
+          image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=250&fit=crop',
+          options: [
+            'Energía eólica',
+            'Energía solar',
+            'Energía hidroeléctrica',
+            'Energía geotérmica'
+          ],
+          correctAnswer: 1,
+          explanation: 'La energía solar es la más abundante, ya que el sol proporciona más energía en una hora de la que el mundo consume en un año.'
+        },
+        {
+          id: 2,
+          question: '¿Qué ventaja tienen las energías renovables sobre los combustibles fósiles?',
+          image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=250&fit=crop',
+          options: [
+            'Son más baratas de instalar',
+            'No producen emisiones de CO2',
+            'Están disponibles en todos los países',
+            'No requieren mantenimiento'
+          ],
+          correctAnswer: 1,
+          explanation: 'Las energías renovables no producen emisiones de CO2 durante su funcionamiento, ayudando a combatir el cambio climático.'
+        }
+      ]
+    },
+    clima: {
+      id: 'clima',
+      title: 'Cambio Climático',
+      description: 'Comprende las causas, efectos y soluciones del cambio climático global',
+      questions: [
+        {
+          id: 1,
+          question: '¿Cuál es la principal causa del cambio climático actual?',
+          image: 'https://images.unsplash.com/photo-1569163139394-de44cb5894ce?w=400&h=250&fit=crop',
+          options: [
+            'Variaciones naturales del clima',
+            'Actividad volcánica',
+            'Emisiones de gases de efecto invernadero por actividades humanas',
+            'Cambios en la órbita terrestre'
+          ],
+          correctAnswer: 2,
+          explanation: 'Las actividades humanas, especialmente la quema de combustibles fósiles, son la principal causa del cambio climático actual.'
+        },
+        {
+          id: 2,
+          question: '¿Cuál de estos efectos NO está relacionado con el cambio climático?',
+          image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=250&fit=crop',
+          options: [
+            'Aumento del nivel del mar',
+            'Derretimiento de glaciares',
+            'Terremotos más frecuentes',
+            'Eventos climáticos extremos'
+          ],
+          correctAnswer: 2,
+          explanation: 'Los terremotos no están relacionados con el cambio climático. Son causados por movimientos tectónicos.'
+        }
+      ]
+    }
+  };
+
   const renderContent = () => {
+    // Show quiz if one is active
+    if (activeQuiz && courseData[activeQuiz as keyof typeof courseData]) {
+      return (
+        <CourseQuiz
+          course={courseData[activeQuiz as keyof typeof courseData]}
+          onClose={handleCloseQuiz}
+        />
+      );
+    }
+
     switch (activeSection) {
       case 'inicio':
         return (
@@ -85,28 +210,34 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
                   { 
+                    id: 'reciclaje',
                     title: 'Reciclaje Básico', 
                     icon: Recycle, 
                     description: 'Aprende los fundamentos del reciclaje y cómo separar correctamente los residuos', 
                     color: 'bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400',
                     difficulty: 'Principiante',
-                    duration: '30 min'
+                    duration: '30 min',
+                    questions: 2
                   },
                   { 
+                    id: 'energia',
                     title: 'Energías Renovables', 
                     icon: Zap, 
                     description: 'Descubre las energías del futuro: solar, eólica e hidroeléctrica', 
                     color: 'bg-yellow-100 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400',
                     difficulty: 'Intermedio',
-                    duration: '45 min'
+                    duration: '45 min',
+                    questions: 2
                   },
                   { 
+                    id: 'clima',
                     title: 'Cambio Climático', 
                     icon: CloudRain, 
                     description: 'Comprende las causas y efectos del cambio climático global', 
                     color: 'bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400',
                     difficulty: 'Avanzado',
-                    duration: '60 min'
+                    duration: '60 min',
+                    questions: 2
                   }
                 ].map((course, index) => {
                   const IconComponent = course.icon;
@@ -125,8 +256,12 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
                           <span>{course.duration}</span>
                         </div>
                       </CardHeader>
+                          <span>{course.questions} preguntas</span>
                       <CardContent>
-                        <Button className="w-full eco-button group">
+                        <Button 
+                          className="w-full eco-button group"
+                          onClick={() => handleStartCourse(course.id)}
+                        >
                           <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform duration-200" aria-hidden="true" />
                           Comenzar Curso
                         </Button>
