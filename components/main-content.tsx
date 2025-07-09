@@ -26,6 +26,7 @@ import {
 import { RecyclingInteractiveCards } from '@/components/recycling-interactive-cards';
 import { CourseQuiz } from '@/components/course-quiz';
 import { ClimateInteractiveSection } from '@/components/climate-interactive-section';
+import { RenewableEnergySection } from '@/components/renewable-energy-section';
 
 interface MainContentProps {
   activeSection: string;
@@ -35,6 +36,7 @@ interface MainContentProps {
 export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
   const [activeQuiz, setActiveQuiz] = useState<string | null>(null);
   const [showClimateSection, setShowClimateSection] = useState(false);
+  const [showEnergySection, setShowEnergySection] = useState(false);
 
   const handleStartCourse = (courseId: string) => {
     setActiveQuiz(courseId);
@@ -332,23 +334,41 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
                 Explora las energías renovables y su impacto positivo en nuestro planeta
               </p>
             </div>
-            <Card className="eco-card">
-              <CardHeader>
-                <div className="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/20 rounded-xl flex items-center justify-center mb-4">
-                  <Zap className="h-8 w-8 text-yellow-600 dark:text-yellow-400" aria-hidden="true" />
-                </div>
-                <CardTitle className="dark:text-white text-xl">Energías Renovables</CardTitle>
-                <CardDescription className="dark:text-gray-400 text-responsive">
-                  Aprende sobre energía solar, eólica, hidroeléctrica y otras fuentes limpias
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button className="eco-button">
-                  <ArrowRight className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Explorar energías
+            
+            {!showEnergySection ? (
+              <Card className="eco-card">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/20 rounded-xl flex items-center justify-center mb-4">
+                    <Zap className="h-8 w-8 text-yellow-600 dark:text-yellow-400" aria-hidden="true" />
+                  </div>
+                  <CardTitle className="dark:text-white text-xl">Energías Renovables</CardTitle>
+                  <CardDescription className="dark:text-gray-400 text-responsive">
+                    Aprende sobre energía solar, eólica, hidroeléctrica y otras fuentes limpias
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button 
+                    className="eco-button"
+                    onClick={() => setShowEnergySection(true)}
+                  >
+                    <ArrowRight className="mr-2 h-4 w-4" aria-hidden="true" />
+                    Explorar energías
+                  </Button>
+                </CardContent>
+              </Card>
+            ) : (
+              <div className="space-y-6">
+                <Button
+                  variant="ghost"
+                  onClick={() => setShowEnergySection(false)}
+                  className="flex items-center space-x-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  <ArrowRight className="h-4 w-4 rotate-180" aria-hidden="true" />
+                  <span>Volver a la introducción</span>
                 </Button>
-              </CardContent>
-            </Card>
+                <RenewableEnergySection />
+              </div>
+            )}
           </div>
         );
 
