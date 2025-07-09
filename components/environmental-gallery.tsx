@@ -3,25 +3,25 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const environmentalImages = [
   {
-    src: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop&crop=center',
+    src: 'https://images.unsplash.com/photo-1497436072909-f5e4be1713d1?w=600&h=400&fit=crop&crop=center',
     alt: 'Grupo de jóvenes voluntarios plantando árboles en un parque comunitario',
     caption: 'Jóvenes plantando árboles',
     description: 'Construyendo un futuro más verde, árbol por árbol'
   },
   {
-    src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&crop=center',
+    src: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&h=400&fit=crop&crop=center',
     alt: 'Voluntarios trabajando juntos para limpiar un río contaminado',
     caption: 'Voluntarios limpiando ríos',
     description: 'Protegiendo nuestras fuentes de vida'
   },
   {
-    src: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600&h=400&fit=crop&crop=center',
+    src: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&h=400&fit=crop&crop=center',
     alt: 'Estudiantes separando materiales reciclables en contenedores de colores',
     caption: 'Estudiantes reciclando',
     description: 'Cada acción cuenta para nuestro planeta'
   },
   {
-    src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop&crop=center',
+    src: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop&crop=center',
     alt: 'Comunidad local trabajando para proteger la biodiversidad en un bosque',
     caption: 'Comunidades protegiendo la biodiversidad',
     description: 'Unidos por la conservación de la naturaleza'

@@ -81,7 +81,7 @@ export function BlogContent() {
       readTime: '5 min',
       views: 2847,
       likes: 156,
-      imageUrl: 'https://images.unsplash.com/photo-1569163139394-de44cb5894ce?w=600&h=400&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&h=400&fit=crop',
       url: '#',
       featured: true
     },
@@ -95,7 +95,7 @@ export function BlogContent() {
       readTime: '4 min',
       views: 3921,
       likes: 287,
-      imageUrl: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=400&fit=crop',
       url: '#',
       featured: true
     },
@@ -109,7 +109,7 @@ export function BlogContent() {
       readTime: '6 min',
       views: 1654,
       likes: 98,
-      imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop',
       url: '#',
       featured: false
     },
@@ -123,7 +123,7 @@ export function BlogContent() {
       readTime: '7 min',
       views: 2103,
       likes: 134,
-      imageUrl: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&h=400&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&h=400&fit=crop',
       url: '#',
       featured: false
     },
@@ -137,7 +137,7 @@ export function BlogContent() {
       readTime: '5 min',
       views: 1876,
       likes: 112,
-      imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1497436072909-f5e4be1713d1?w=600&h=400&fit=crop',
       url: '#',
       featured: false
     },
@@ -151,7 +151,7 @@ export function BlogContent() {
       readTime: '4 min',
       views: 1432,
       likes: 87,
-      imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
       url: '#',
       featured: false
     },
@@ -165,7 +165,7 @@ export function BlogContent() {
       readTime: '6 min',
       views: 2234,
       likes: 167,
-      imageUrl: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600&h=400&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&h=400&fit=crop',
       url: '#',
       featured: false
     },
@@ -179,7 +179,7 @@ export function BlogContent() {
       readTime: '8 min',
       views: 3456,
       likes: 298,
-      imageUrl: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&h=400&fit=crop',
       url: '#',
       featured: false
     }

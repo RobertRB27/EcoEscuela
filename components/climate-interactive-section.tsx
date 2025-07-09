@@ -75,7 +75,7 @@ export function ClimateInteractiveSection() {
     {
       id: 1,
       question: '¿Cuál es la principal causa del aumento de temperatura global?',
-      image: 'https://images.unsplash.com/photo-1569163139394-de44cb5894ce?w=400&h=250&fit=crop',
+      image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=250&fit=crop',
       options: [
         { text: 'Actividad solar', icon: Sun, correct: false },
         { text: 'Emisiones de CO2', icon: CloudRain, correct: true },
@@ -87,7 +87,7 @@ export function ClimateInteractiveSection() {
     {
       id: 2,
       question: '¿Qué efecto tiene el derretimiento de los glaciares?',
-      image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=250&fit=crop',
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop',
       options: [
         { text: 'Enfría los océanos', icon: Droplets, correct: false },
         { text: 'Aumenta el nivel del mar', icon: Globe, correct: true },
@@ -99,7 +99,7 @@ export function ClimateInteractiveSection() {
     {
       id: 3,
       question: '¿Cuál es la forma más efectiva de reducir tu huella de carbono personal?',
-      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=250&fit=crop',
+      image: 'https://images.unsplash.com/photo-1497436072909-f5e4be1713d1?w=400&h=250&fit=crop',
       options: [
         { text: 'Usar transporte público', icon: Car, correct: false },
         { text: 'Ahorrar energía en casa', icon: Lightbulb, correct: false },
@@ -271,7 +271,7 @@ export function ClimateInteractiveSection() {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1569163139394-de44cb5894ce?w=500&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=500&h=300&fit=crop"
                 alt="Efectos del cambio climático en el planeta"
                 className="w-full h-64 object-cover rounded-lg shadow-lg"
                 loading="lazy"

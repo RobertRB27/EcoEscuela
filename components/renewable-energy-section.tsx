@@ -87,7 +87,7 @@ export function RenewableEnergySection() {
       title: 'Energía Solar',
       description: 'Aprovecha la radiación del sol para generar electricidad',
       icon: Sun,
-      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=500&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=300&fit=crop',
       content: {
         howItWorks: 'Los paneles solares fotovoltaicos convierten la luz solar directamente en electricidad mediante células semiconductoras. También existe la energía solar térmica que usa el calor del sol para calentar agua o generar vapor.',
         advantages: [
@@ -114,7 +114,7 @@ export function RenewableEnergySection() {
       title: 'Energía Eólica',
       description: 'Utiliza la fuerza del viento para generar electricidad',
       icon: Wind,
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=500&h=300&fit=crop',
       content: {
         howItWorks: 'Los aerogeneradores capturan la energía cinética del viento mediante aspas aerodinámicas que hacen girar un rotor conectado a un generador eléctrico. Pueden instalarse en tierra o en el mar.',
         advantages: [
@@ -141,7 +141,7 @@ export function RenewableEnergySection() {
       title: 'Energía Hidroeléctrica',
       description: 'Aprovecha la fuerza del agua en movimiento',
       icon: Droplets,
-      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop',
       content: {
         howItWorks: 'Las centrales hidroeléctricas utilizan la fuerza del agua que fluye o cae para hacer girar turbinas conectadas a generadores. Pueden ser de gran escala (represas) o pequeña escala (ríos).',
         advantages: [
@@ -168,7 +168,7 @@ export function RenewableEnergySection() {
       title: 'Biomasa',
       description: 'Energía obtenida de materia orgánica renovable',
       icon: Leaf,
-      image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=500&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=500&h=300&fit=crop',
       content: {
         howItWorks: 'La biomasa incluye residuos orgánicos, cultivos energéticos y madera que se queman directamente o se convierten en biocombustibles. También incluye biogás de descomposición orgánica.',
         advantages: [
@@ -196,7 +196,7 @@ export function RenewableEnergySection() {
     {
       id: 1,
       question: '¿Cuál es la fuente de energía renovable más abundante en la Tierra?',
-      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=250&fit=crop',
+      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=250&fit=crop',
       options: [
         { text: 'Energía eólica', icon: Wind, correct: false },
         { text: 'Energía solar', icon: Sun, correct: true },
@@ -208,7 +208,7 @@ export function RenewableEnergySection() {
     {
       id: 2,
       question: '¿Qué ventaja tienen las energías renovables sobre los combustibles fósiles?',
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=250&fit=crop',
+      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=400&h=250&fit=crop',
       options: [
         { text: 'Son más baratas de instalar', icon: TrendingUp, correct: false },
         { text: 'No producen emisiones de CO2', icon: Leaf, correct: true },
@@ -220,7 +220,7 @@ export function RenewableEnergySection() {
     {
       id: 3,
       question: '¿Cuál es el principal desafío de las energías renovables?',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop',
+      image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=400&h=250&fit=crop',
       options: [
         { text: 'Son muy costosas', icon: TrendingUp, correct: false },
         { text: 'Intermitencia y almacenamiento', icon: Battery, correct: true },
@@ -330,7 +330,7 @@ export function RenewableEnergySection() {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=500&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=300&fit=crop"
                 alt="Paneles solares y turbinas eólicas representando energías renovables"
                 className="w-full h-64 object-cover rounded-lg shadow-lg"
                 loading="lazy"
