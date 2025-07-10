@@ -28,6 +28,11 @@ import { CourseQuiz } from '@/components/course-quiz';
 import { ClimateInteractiveSection } from '@/components/climate-interactive-section';
 import { RenewableEnergySection } from '@/components/renewable-energy-section';
 import { BlogContent } from '@/components/blog-content';
+import { DailyHabitsAccordion } from '@/components/sustainability/daily-habits-accordion';
+import { CarbonFootprintCalculator } from '@/components/sustainability/carbon-footprint-calculator';
+import { MonthlyChallenge } from '@/components/sustainability/monthly-challenge';
+import { SustainabilityQuiz } from '@/components/sustainability/sustainability-quiz';
+import { SustainableIdeasGallery } from '@/components/sustainability/sustainable-ideas-gallery';
 
 interface MainContentProps {
   activeSection: string;
@@ -442,23 +447,21 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
                 Descubre cómo vivir de manera más sostenible y responsable con el medio ambiente
               </p>
             </div>
-            <Card className="eco-card">
-              <CardHeader>
-                <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/20 rounded-xl flex items-center justify-center mb-4">
-                  <Leaf className="h-8 w-8 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
-                </div>
-                <CardTitle className="dark:text-white text-xl">Vida Sostenible</CardTitle>
-                <CardDescription className="dark:text-gray-400 text-responsive">
-                  Aprende hábitos y prácticas para un estilo de vida más sostenible
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button className="eco-button">
-                  <ArrowRight className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Vivir sostenible
-                </Button>
-              </CardContent>
-            </Card>
+            
+            {/* Hábitos sostenibles diarios */}
+            <DailyHabitsAccordion />
+            
+            {/* Calculadora de huella de carbono */}
+            <CarbonFootprintCalculator />
+            
+            {/* Desafío del mes */}
+            <MonthlyChallenge />
+            
+            {/* Quiz de sostenibilidad */}
+            <SustainabilityQuiz />
+            
+            {/* Galería de ideas sostenibles */}
+            <SustainableIdeasGallery />
           </div>
         );
 
