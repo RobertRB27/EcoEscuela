@@ -37,7 +37,6 @@ import {
   MessageCircle, 
   HelpCircle, 
   Calendar,
-  Heart
 } from 'lucide-react';
 
 interface MainContentProps {
