@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Input } from '@/components/ui/input';
 import { 
-  Globe,
+  Globe, 
   Sun, 
   TreePine, 
   Wind, 
@@ -24,14 +24,11 @@ import {
   Calendar, 
   BookOpen, 
   Eye, 
-  User,
   Users, 
   Heart, 
   Share2, 
   ExternalLink, 
-  AlertCircle,
-  Mail,
-  Phone
+  AlertCircle 
 } from 'lucide-react';
 
 interface NoticiaAmbiental {
