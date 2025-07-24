@@ -18,7 +18,9 @@ import {
   Calendar,
   User,
   Star,
-  CheckCircle
+  CheckCircle,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
@@ -43,6 +45,7 @@ export function RecursosDescargables() {
   const [busqueda, setBusqueda] = useState('');
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todas');
   const [recursoDescargado, setRecursoDescargado] = useState<string | null>(null);
+  const [detallesExpandidos, setDetallesExpandidos] = useState<Record<string, boolean>>({});
 
   const recursos: Recurso[] = [
     {
@@ -263,6 +266,13 @@ export function RecursosDescargables() {
     }, 2000);
   };
 
+  const toggleDetalles = (recursoId: string) => {
+    setDetallesExpandidos(prev => ({
+      ...prev,
+      [recursoId]: !prev[recursoId]
+    }));
+  };
+
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       {/* Header */}
@@ -354,6 +364,7 @@ export function RecursosDescargables() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {recursosFiltrados.map((recurso) => {
           const TipoIcon = getTipoIcon(recurso.tipo);
+          const mostrarDetalles = detallesExpandidos[recurso.id];
           
           return (
             <Card key={recurso.id} className="eco-card group hover:shadow-xl transition-all duration-300 overflow-hidden">
@@ -400,14 +411,97 @@ export function RecursosDescargables() {
                   </p>
                 </div>
 
-                {/* Información del autor */}
-                <div className="flex items-start space-x-2 p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
-                  <User className="h-4 w-4 text-emerald-600 dark:text-emerald-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                  <div>
-                    <p className="text-xs font-medium text-emerald-800 dark:text-emerald-200">
-                      {recurso.autor.split(' - ')[0]}
-                    </p>
-                    {recurso.autor.includes(' - ') && (
+                    {/* Información del autor */}
+                    <div className="flex items-start space-x-2 p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
+                      <User className="h-4 w-4 text-emerald-600 dark:text-emerald-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <div>
+                        <p className="text-xs font-medium text-emerald-800 dark:text-emerald-200">
+                          {recurso.autor.split(' - ')[0]}
+                        </p>
+                        {recurso.autor.includes(' - ') && (
+                          <p className="text-xs text-emerald-600 dark:text-emerald-400">
+                            {recurso.autor.split(' - ')[1]}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Botón de más detalles */}
+                <div className="mb-4">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => toggleDetalles(recurso.id)}
+                    className="w-full text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 p-2 text-xs"
+                  >
+                    {mostrarDetalles ? (
+                      <>
+                        <ChevronUp className="mr-1 h-3 w-3" aria-hidden="true" />
+                        Menos detalles
+                      </>
+                    ) : (
+                      <>
+                        <ChevronDown className="mr-1 h-3 w-3" aria-hidden="true" />
+                        Más detalles
+                      </>
+                    )}
+                  </Button>
+                </div>
+
+                {/* Acciones */}
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
+
+      {/* Mensaje si no hay resultados */}
+      {recursosFiltrados.length === 0 && (
+        <Card className="eco-card">
+          <CardContent className="text-center py-12">
+            <Search className="h-12 w-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              No se encontraron recursos
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              Intenta ajustar los filtros de búsqueda o selecciona una categoría diferente.
+            </p>
+            <Button
+              onClick={() => {
+                setBusqueda('');
+                setCategoriaSeleccionada('Todas');
+              }}
+              variant="outline"
+            >
+              Limpiar filtros
+            </Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Call to Action */}
+      <Card className="eco-card bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 border-emerald-200 dark:border-emerald-800">
+        <CardContent className="text-center py-8">
+          <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-800 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="h-8 w-8 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+          </div>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+            ¿Necesitas algún recurso específico?
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
+            Si no encuentras lo que buscas, contáctanos y trabajaremos en crear el recurso 
+            educativo que necesitas para tu proyecto o clase.
+          </p>
+          <Button className="eco-button">
+            Solicitar Recurso
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
                       <p className="text-xs text-emerald-600 dark:text-emerald-400">
                         {recurso.autor.split(' - ')[1]}
                       </p>
@@ -448,7 +542,10 @@ export function RecursosDescargables() {
                   {recurso.titulo}
                 </CardTitle>
                 <CardDescription className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 line-clamp-3">
-                  {recurso.descripcion}
+                  {mostrarDetalles 
+                    ? recurso.descripcion 
+                    : `${recurso.descripcion.substring(0, 120)}${recurso.descripcion.length > 120 ? '...' : ''}`
+                  }
                 </CardDescription>
               </CardHeader>
 
@@ -475,15 +572,17 @@ export function RecursosDescargables() {
                   </div>
                 </div>
 
-                {/* Autor y fecha */}
-                <div className="flex items-center justify-between mb-4 text-xs text-gray-500 dark:text-gray-400">
-                  <div className="flex items-center space-x-1">
-                    <User className="h-3 w-3" aria-hidden="true" />
-                    <span>{recurso.autor}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="h-3 w-3" aria-hidden="true" />
-                    <span>{formatearFecha(recurso.fechaPublicacion)}</span>
+                {/* Información básica del autor y fecha */}
+                <div className="mb-4">
+                  <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                    <div className="flex items-center space-x-1">
+                      <User className="h-3 w-3" aria-hidden="true" />
+                      <span className="truncate">{recurso.autor.split(' - ')[0]}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Calendar className="h-3 w-3" aria-hidden="true" />
+                      <span>{formatearFecha(recurso.fechaPublicacion)}</span>
+                    </div>
                   </div>
                 </div>
 
@@ -503,18 +602,19 @@ export function RecursosDescargables() {
                       <>
                         <Download className="mr-2 h-4 w-4" aria-hidden="true" />
                         Descargar
-                      </>
-                    )}
-                  </Button>
-                  
-                  <Button variant="outline" size="sm">
-                    <Heart className="h-4 w-4" aria-hidden="true" />
-                  </Button>
-                  
-                  <Button variant="outline" size="sm">
-                    <Share2 className="h-4 w-4" aria-hidden="true" />
-                  </Button>
-                </div>
+                {/* Información detallada (desplegable) */}
+                {mostrarDetalles && (
+                  <div className="space-y-3 mb-4 animate-in slide-in-from-top-2 duration-300">
+                    {/* Contenido y características */}
+                    <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
+                        <BookOpen className="h-4 w-4 mr-1 text-emerald-600" aria-hidden="true" />
+                        Contenido incluido:
+                      </h4>
+                      <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {recurso.descripcion.split('.').slice(1, 2).join('.').trim() || 'Contenido educativo especializado'}
+                      </p>
+                    </div>
               </CardContent>
             </Card>
           );
