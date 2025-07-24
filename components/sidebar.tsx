@@ -146,6 +146,9 @@ const navigationSections: NavigationSection[] = [
     ]
   },
   {
+    }
+  },
+  {
     id: 'support',
     title: 'Soporte',
     icon: HelpCircle,
