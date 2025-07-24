@@ -80,7 +80,7 @@ export function QuizClima() {
       pregunta: '¿Qué efecto tiene el derretimiento de los glaciares en el clima global?',
       imagen: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop',
       opciones: [
-        { texto: 'Enfría los océanos', icon: CloudRain, correcta: false },
+        { texto: 'Enfría los océanos', icono: CloudRain, correcta: false },
         { texto: 'Aumenta el nivel del mar y altera corrientes', icono: Globe, correcta: true },
         { texto: 'Mejora las condiciones de pesca', icono: Thermometer, correcta: false },
         { texto: 'Reduce las precipitaciones', icono: CloudRain, correcta: false }
