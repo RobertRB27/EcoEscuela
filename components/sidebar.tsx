@@ -146,7 +146,19 @@ const navigationSections: NavigationSection[] = [
     ]
   },
   {
-    }
+    id: 'settings',
+    title: 'Configuración',
+    icon: Settings,
+    color: 'text-gray-600 dark:text-gray-400',
+    items: [
+      {
+        id: 'configuracion',
+        label: 'Configuración',
+        icon: Settings,
+        description: 'Ajustes de la aplicación',
+        color: 'text-gray-600 dark:text-gray-400'
+      }
+    ]
   },
   {
     id: 'support',
