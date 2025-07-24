@@ -17,7 +17,9 @@ import {
   GraduationCap,
   Users,
   Settings,
-  HelpCircle
+  HelpCircle,
+  Newspaper,
+  Download
 } from 'lucide-react';
 import {
   Collapsible,
@@ -142,28 +144,8 @@ const navigationSections: NavigationSection[] = [
         color: 'text-pink-600 dark:text-pink-400'
       }
     ]
-  }
-];
-
-// Agregar imports necesarios
-import { 
-  Home, 
-  Recycle, 
-  Zap, 
-  CloudRain, 
-  Leaf,
-  BookOpen,
-  Mail,
-  Sparkles,
-  ChevronDown,
-  ChevronRight,
-  GraduationCap,
-  Users,
-  Settings,
-  HelpCircle,
-  Newspaper,
-  Download
-} from 'lucide-react';
+  },
+  {
     id: 'support',
     title: 'Soporte',
     icon: HelpCircle,
