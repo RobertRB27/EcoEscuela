@@ -44,7 +44,7 @@ export function RecursosDescargables() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todas');
   const [recursoDescargado, setRecursoDescargado] = useState<string | null>(null);
 
-  const [recursos, setRecursos] = useState<Recurso[]>([
+  const recursos: Recurso[] = [
     {
       id: '1',
       titulo: 'Guía Completa de Reciclaje Doméstico',
@@ -139,7 +139,12 @@ export function RecursosDescargables() {
       idioma: 'Español/Inglés',
       premium: true
     }
-  ]);
+  ];
+
+  // Inicializar recursos al cargar el componente
+  React.useEffect(() => {
+    setRecursos(recursosIniciales);
+  }, []);
 
   const categorias = ['Todas', 'Reciclaje', 'Energía', 'Clima', 'Educación', 'Sostenibilidad', 'Biodiversidad'];
 
