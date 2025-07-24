@@ -108,13 +108,6 @@ const navigationSections: NavigationSection[] = [
     color: 'text-purple-600 dark:text-purple-400',
     items: [
       {
-        id: 'blog',
-        label: 'Blog Ambiental',
-        icon: BookOpen,
-        description: 'Noticias actualizadas',
-        color: 'text-purple-600 dark:text-purple-400'
-      },
-      {
         id: 'revistas',
         label: 'Revistas',
         icon: Newspaper,

@@ -453,11 +453,6 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
           </div>
         );
 
-      case 'blog':
-        return (
-          <BlogNoticias />
-        );
-        
       case 'revistas':
         return (
           <RevistasAmbientales />

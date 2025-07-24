@@ -48,14 +48,14 @@ export function RecursosDescargables() {
     {
       id: '1',
       titulo: 'Guía Completa de Reciclaje Doméstico',
-      descripcion: 'Manual práctico con instrucciones detalladas para separar y reciclar residuos en el hogar, incluyendo consejos específicos por tipo de material.',
+      descripcion: 'Manual completo de 24 páginas con instrucciones paso a paso para implementar un sistema de reciclaje eficiente en casa. Incluye: clasificación por colores de contenedores, tabla de materiales reciclables, calendario de recolección, consejos para reducir residuos y proyectos DIY con materiales reciclados.',
       tipo: 'PDF',
       categoria: 'Reciclaje',
       tamaño: '2.5 MB',
       descargas: 15420,
       valoracion: 4.8,
       fechaPublicacion: '2025-01-10',
-      autor: 'Dra. María Ecológica',
+      autor: 'Dra. María Fernández - Especialista en Gestión de Residuos',
       imagen: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=300&h=200&fit=crop',
       idioma: 'Español',
       paginas: 24,
@@ -64,14 +64,14 @@ export function RecursosDescargables() {
     {
       id: '2',
       titulo: 'Infografía: Energías Renovables 2025',
-      descripcion: 'Visualización completa del panorama actual de las energías renovables, con estadísticas globales, tecnologías emergentes y proyecciones futuras.',
+      descripcion: 'Infografía educativa de alta resolución que presenta el estado actual de las energías renovables a nivel mundial. Contiene: mapas interactivos de instalaciones, gráficos comparativos de eficiencia, línea de tiempo de innovaciones tecnológicas, estadísticas de inversión por país, y proyecciones hasta 2030.',
       tipo: 'Infografía',
       categoria: 'Energía',
       tamaño: '8.2 MB',
       descargas: 8930,
       valoracion: 4.9,
       fechaPublicacion: '2025-01-08',
-      autor: 'Equipo EcoEscuela',
+      autor: 'Instituto de Energías Renovables - Universidad Tecnológica',
       imagen: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop',
       idioma: 'Español/Inglés',
       premium: false
@@ -79,14 +79,14 @@ export function RecursosDescargables() {
     {
       id: '3',
       titulo: 'Plan de Acción Climática Personal',
-      descripcion: 'Template editable para crear tu propio plan de reducción de huella de carbono, con metas mensuales, seguimiento y consejos prácticos.',
+      descripcion: 'Plantilla interactiva de 16 páginas para desarrollar tu estrategia personal contra el cambio climático. Incluye: calculadora de huella de carbono, metas SMART mensuales, tracker de progreso, lista de 50 acciones específicas, enlaces a herramientas digitales y comunidades locales de acción climática.',
       tipo: 'Guía',
       categoria: 'Clima',
       tamaño: '1.8 MB',
       descargas: 12100,
       valoracion: 4.7,
       fechaPublicacion: '2025-01-05',
-      autor: 'Dr. Carlos Verde',
+      autor: 'Dr. Carlos Mendoza - Especialista en Políticas Climáticas',
       imagen: 'https://images.unsplash.com/photo-1569163139394-de44cb5894ce?w=300&h=200&fit=crop',
       idioma: 'Español',
       paginas: 16,
@@ -95,14 +95,14 @@ export function RecursosDescargables() {
     {
       id: '4',
       titulo: 'Kit de Educación Ambiental para Docentes',
-      descripcion: 'Conjunto completo de recursos educativos: presentaciones, actividades, juegos y evaluaciones para enseñar sostenibilidad en el aula.',
+      descripcion: 'Paquete educativo integral de 85 páginas diseñado para educadores de primaria y secundaria. Contiene: 12 presentaciones PowerPoint, 25 actividades prácticas, 8 experimentos científicos, rúbricas de evaluación, guías de discusión grupal, recursos multimedia y enlaces a videos educativos. Alineado con estándares curriculares internacionales.',
       tipo: 'Presentación',
       categoria: 'Educación',
       tamaño: '45.2 MB',
       descargas: 5670,
       valoracion: 4.9,
       fechaPublicacion: '2025-01-03',
-      autor: 'Red de Educadores Ambientales',
+      autor: 'Red Internacional de Educadores Ambientales - UNESCO',
       imagen: 'https://images.unsplash.com/photo-1497436072909-f5e4be1713d1?w=300&h=200&fit=crop',
       idioma: 'Español',
       paginas: 85,
@@ -111,14 +111,14 @@ export function RecursosDescargables() {
     {
       id: '5',
       titulo: 'Calendario Ambiental 2025',
-      descripcion: 'Calendario imprimible con fechas importantes del medio ambiente, consejos mensuales y desafíos sostenibles para todo el año.',
+      descripcion: 'Calendario anual interactivo de 12 páginas con enfoque educativo ambiental. Incluye: fechas clave (Día de la Tierra, Semana del Medio Ambiente), datos curiosos mensuales, desafíos familiares, recetas eco-friendly estacionales, actividades para cada época del año y QR codes que conectan a recursos adicionales online.',
       tipo: 'PDF',
       categoria: 'Sostenibilidad',
       tamaño: '12.5 MB',
       descargas: 9840,
       valoracion: 4.6,
       fechaPublicacion: '2024-12-28',
-      autor: 'Fundación EcoVida',
+      autor: 'Fundación EcoVida - Especialistas en Educación Familiar',
       imagen: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=300&h=200&fit=crop',
       idioma: 'Español',
       paginas: 12,
@@ -127,21 +127,53 @@ export function RecursosDescargables() {
     {
       id: '6',
       titulo: 'Biodiversidad: Atlas Visual Interactivo',
-      descripcion: 'Guía visual de especies en peligro de extinción, ecosistemas amenazados y proyectos de conservación exitosos alrededor del mundo.',
+      descripcion: 'Atlas digital premium de biodiversidad mundial con más de 200 especies documentadas. Contiene: fichas detalladas de animales en peligro, mapas de biodiversidad por continente, casos de éxito en conservación, fotografías de alta calidad, datos de población actualizada y enlaces a programas de adopción simbólica de especies.',
       tipo: 'Infografía',
       categoria: 'Biodiversidad',
       tamaño: '25.8 MB',
       descargas: 7230,
       valoracion: 4.8,
       fechaPublicacion: '2024-12-25',
-      autor: 'WWF Educational',
+      autor: 'WWF International - Departamento de Educación y Conservación',
       imagen: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&h=200&fit=crop',
       idioma: 'Español/Inglés',
+      premium: true
+    },
+    {
+      id: '7',
+      titulo: 'Manual de Huertos Urbanos Sostenibles',
+      descripcion: 'Guía práctica de 32 páginas para crear y mantener huertos en espacios urbanos reducidos. Incluye: selección de plantas por clima, técnicas de compostaje casero, sistemas de riego eficiente, control natural de plagas, calendario de siembra anual y recetas con productos cosechados. Ideal para balcones, terrazas y patios pequeños.',
+      tipo: 'PDF',
+      categoria: 'Agricultura',
+      tamaño: '4.2 MB',
+      descargas: 11200,
+      valoracion: 4.7,
+      fechaPublicacion: '2025-01-12',
+      autor: 'Ing. Ana Botánica - Especialista en Agricultura Urbana',
+      imagen: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&h=200&fit=crop',
+      idioma: 'Español',
+      paginas: 32,
+      premium: false
+    },
+    {
+      id: '8',
+      titulo: 'Guía de Construcción Sostenible',
+      descripcion: 'Manual técnico de 45 páginas sobre materiales y técnicas de construcción ecológica. Contiene: materiales alternativos (bambú, adobe, materiales reciclados), técnicas de aislamiento natural, sistemas de captación de agua lluvia, energía solar básica para hogares, normativas ambientales de construcción y presupuestos comparativos.',
+      tipo: 'Guía',
+      categoria: 'Construcción',
+      tamaño: '6.8 MB',
+      descargas: 6450,
+      valoracion: 4.5,
+      fechaPublicacion: '2025-01-01',
+      autor: 'Arq. Roberto Eco - Certificado en Construcción Verde',
+      imagen: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=300&h=200&fit=crop',
+      idioma: 'Español',
+      paginas: 45,
       premium: true
     }
   ];
 
-  const categorias = ['Todas', 'Reciclaje', 'Energía', 'Clima', 'Educación', 'Sostenibilidad', 'Biodiversidad'];
+  const categorias = ['Todas', 'Reciclaje', 'Energía', 'Clima', 'Educación', 'Sostenibilidad', 'Biodiversidad', 'Agricultura', 'Construcción'];
 
   const recursosFiltrados = recursos.filter(recurso => {
     const coincideBusqueda = recurso.titulo.toLowerCase().includes(busqueda.toLowerCase()) ||
@@ -285,7 +317,7 @@ export function RecursosDescargables() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Recursos</p>
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Recursos Disponibles</p>
                 <p className="text-2xl font-bold text-gray-900 dark:text-white">{recursos.length}</p>
               </div>
               <FileText className="h-8 w-8 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
@@ -297,37 +329,15 @@ export function RecursosDescargables() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Descargas Totales</p>
-                <p className="text-2xl font-bold text-gray-900 dark:text-white">59K+</p>
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Especialistas</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-white">12+</p>
               </div>
-              <Download className="h-8 w-8 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+              <User className="h-8 w-8 text-blue-600 dark:text-blue-400" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
 
-        <Card className="eco-card">
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Valoración Promedio</p>
-                <p className="text-2xl font-bold text-gray-900 dark:text-white">4.8</p>
-              </div>
-              <Star className="h-8 w-8 text-yellow-600 dark:text-yellow-400" aria-hidden="true" />
-            </div>
-          </CardContent>
-        </Card>
 
-        <Card className="eco-card">
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Idiomas</p>
-                <p className="text-2xl font-bold text-gray-900 dark:text-white">2</p>
-              </div>
-              <Eye className="h-8 w-8 text-purple-600 dark:text-purple-400" aria-hidden="true" />
-            </div>
-          </CardContent>
-        </Card>
       </div>
 
       {/* Alertas informativas */}
@@ -377,6 +387,35 @@ export function RecursosDescargables() {
                 </div>
 
                 {/* Botón de descarga hover */}
+              {/* Información detallada del recurso */}
+              <div className="space-y-3 mb-4">
+                {/* Contenido y características */}
+                <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
+                    <BookOpen className="h-4 w-4 mr-1 text-emerald-600" aria-hidden="true" />
+                    Contenido incluido:
+                  </h4>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {recurso.descripcion.split('.').slice(1, 2).join('.').trim() || 'Contenido educativo especializado'}
+                  </p>
+                </div>
+
+                {/* Información del autor */}
+                <div className="flex items-start space-x-2 p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
+                  <User className="h-4 w-4 text-emerald-600 dark:text-emerald-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                  <div>
+                    <p className="text-xs font-medium text-emerald-800 dark:text-emerald-200">
+                      {recurso.autor.split(' - ')[0]}
+                    </p>
+                    {recurso.autor.includes(' - ') && (
+                      <p className="text-xs text-emerald-600 dark:text-emerald-400">
+                        {recurso.autor.split(' - ')[1]}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Button
                     size="sm"
