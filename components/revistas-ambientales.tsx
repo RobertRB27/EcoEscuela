@@ -70,7 +70,7 @@ export function RevistasAmbientales() {
     {
       id: '4',
       nombre: 'WWF News',
-      descripción: 'Últimas noticias sobre conservación de la naturaleza, especies en peligro y esfuerzos de protección ambiental mundial.',
+      descripcion: 'Últimas noticias sobre conservación de la naturaleza, especies en peligro y esfuerzos de protección ambiental mundial.',
       imagen: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=300&fit=crop',
       url: 'https://www.worldwildlife.org/stories',
       categoria: 'Conservación',
