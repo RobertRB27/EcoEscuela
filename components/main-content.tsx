@@ -27,7 +27,6 @@ import { RecyclingInteractiveCards } from '@/components/recycling-interactive-ca
 import { CourseQuiz } from '@/components/course-quiz';
 import { ClimateInteractiveSection } from '@/components/climate-interactive-section';
 import { RenewableEnergySection } from '@/components/renewable-energy-section';
-import { BlogContent } from '@/components/blog-content';
 import { QuizReciclaje } from '@/components/quiz-reciclaje';
 import { QuizEnergia } from '@/components/quiz-energia';
 import { QuizClima } from '@/components/quiz-clima';
