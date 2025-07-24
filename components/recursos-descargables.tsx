@@ -232,6 +232,10 @@ export function RecursosDescargables() {
         return 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300';
       case 'Biodiversidad':
         return 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-300';
+      case 'Agricultura':
+        return 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300';
+      case 'Construcción':
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-300';
       default:
         return 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-300';
     }
@@ -254,7 +258,7 @@ export function RecursosDescargables() {
 
   const manejarDescarga = (recurso: Recurso) => {
     if (recurso.premium) {
-      alert(`"${recurso.titulo}" es un recurso premium. Por favor, registrate para acceder a contenido exclusivo.`);
+      alert(`"${recurso.titulo}" es un recurso premium. Por favor, regístrate para acceder a contenido exclusivo.`);
       return;
     }
 
@@ -322,7 +326,7 @@ export function RecursosDescargables() {
       </div>
 
       {/* Estadísticas */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card className="eco-card">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
@@ -347,7 +351,17 @@ export function RecursosDescargables() {
           </CardContent>
         </Card>
 
-
+        <Card className="eco-card">
+          <CardContent className="p-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Descargas</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-white">68K+</p>
+              </div>
+              <Download className="h-8 w-8 text-purple-600 dark:text-purple-400" aria-hidden="true" />
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Alertas informativas */}
@@ -398,118 +412,6 @@ export function RecursosDescargables() {
                 </div>
 
                 {/* Botón de descarga hover */}
-              {/* Información detallada del recurso */}
-              <div className="space-y-3 mb-4">
-                {/* Contenido y características */}
-                <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
-                    <BookOpen className="h-4 w-4 mr-1 text-emerald-600" aria-hidden="true" />
-                    Contenido incluido:
-                  </h4>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {recurso.descripcion.split('.').slice(1, 2).join('.').trim() || 'Contenido educativo especializado'}
-                  </p>
-                </div>
-
-                    {/* Información del autor */}
-                    <div className="flex items-start space-x-2 p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
-                      <User className="h-4 w-4 text-emerald-600 dark:text-emerald-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                      <div>
-                        <p className="text-xs font-medium text-emerald-800 dark:text-emerald-200">
-                          {recurso.autor.split(' - ')[0]}
-                        </p>
-                        {recurso.autor.includes(' - ') && (
-                          <p className="text-xs text-emerald-600 dark:text-emerald-400">
-                            {recurso.autor.split(' - ')[1]}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Botón de más detalles */}
-                <div className="mb-4">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => toggleDetalles(recurso.id)}
-                    className="w-full text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 p-2 text-xs"
-                  >
-                    {mostrarDetalles ? (
-                      <>
-                        <ChevronUp className="mr-1 h-3 w-3" aria-hidden="true" />
-                        Menos detalles
-                      </>
-                    ) : (
-                      <>
-                        <ChevronDown className="mr-1 h-3 w-3" aria-hidden="true" />
-                        Más detalles
-                      </>
-                    )}
-                  </Button>
-                </div>
-
-                {/* Acciones */}
-              </CardContent>
-            </Card>
-          );
-        })}
-      </div>
-
-      {/* Mensaje si no hay resultados */}
-      {recursosFiltrados.length === 0 && (
-        <Card className="eco-card">
-          <CardContent className="text-center py-12">
-            <Search className="h-12 w-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-              No se encontraron recursos
-            </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Intenta ajustar los filtros de búsqueda o selecciona una categoría diferente.
-            </p>
-            <Button
-              onClick={() => {
-                setBusqueda('');
-                setCategoriaSeleccionada('Todas');
-              }}
-              variant="outline"
-            >
-              Limpiar filtros
-            </Button>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Call to Action */}
-      <Card className="eco-card bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 border-emerald-200 dark:border-emerald-800">
-        <CardContent className="text-center py-8">
-          <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-800 rounded-full flex items-center justify-center mx-auto mb-4">
-            <CheckCircle className="h-8 w-8 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
-          </div>
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            ¿Necesitas algún recurso específico?
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-            Si no encuentras lo que buscas, contáctanos y trabajaremos en crear el recurso 
-            educativo que necesitas para tu proyecto o clase.
-          </p>
-          <Button className="eco-button">
-            Solicitar Recurso
-          </Button>
-        </CardContent>
-      </Card>
-    </div>
-  );
-}
-                      <p className="text-xs text-emerald-600 dark:text-emerald-400">
-                        {recurso.autor.split(' - ')[1]}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
-
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Button
                     size="sm"
@@ -586,6 +488,59 @@ export function RecursosDescargables() {
                   </div>
                 </div>
 
+                {/* Información detallada (desplegable) */}
+                {mostrarDetalles && (
+                  <div className="space-y-3 mb-4 animate-in slide-in-from-top-2 duration-300">
+                    {/* Contenido y características */}
+                    <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
+                        <BookOpen className="h-4 w-4 mr-1 text-emerald-600" aria-hidden="true" />
+                        Contenido incluido:
+                      </h4>
+                      <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {recurso.descripcion.split('.').slice(1, 2).join('.').trim() || 'Contenido educativo especializado'}
+                      </p>
+                    </div>
+
+                    {/* Información del autor */}
+                    <div className="flex items-start space-x-2 p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
+                      <User className="h-4 w-4 text-emerald-600 dark:text-emerald-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <div>
+                        <p className="text-xs font-medium text-emerald-800 dark:text-emerald-200">
+                          {recurso.autor.split(' - ')[0]}
+                        </p>
+                        {recurso.autor.includes(' - ') && (
+                          <p className="text-xs text-emerald-600 dark:text-emerald-400">
+                            {recurso.autor.split(' - ')[1]}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Botón de más detalles */}
+                <div className="mb-4">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => toggleDetalles(recurso.id)}
+                    className="w-full text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 p-2 text-xs"
+                  >
+                    {mostrarDetalles ? (
+                      <>
+                        <ChevronUp className="mr-1 h-3 w-3" aria-hidden="true" />
+                        Menos detalles
+                      </>
+                    ) : (
+                      <>
+                        <ChevronDown className="mr-1 h-3 w-3" aria-hidden="true" />
+                        Más detalles
+                      </>
+                    )}
+                  </Button>
+                </div>
+
                 {/* Acciones */}
                 <div className="flex space-x-2">
                   <Button 
@@ -602,19 +557,17 @@ export function RecursosDescargables() {
                       <>
                         <Download className="mr-2 h-4 w-4" aria-hidden="true" />
                         Descargar
-                {/* Información detallada (desplegable) */}
-                {mostrarDetalles && (
-                  <div className="space-y-3 mb-4 animate-in slide-in-from-top-2 duration-300">
-                    {/* Contenido y características */}
-                    <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
-                        <BookOpen className="h-4 w-4 mr-1 text-emerald-600" aria-hidden="true" />
-                        Contenido incluido:
-                      </h4>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        {recurso.descripcion.split('.').slice(1, 2).join('.').trim() || 'Contenido educativo especializado'}
-                      </p>
-                    </div>
+                      </>
+                    )}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => alert('Función de compartir próximamente')}
+                  >
+                    <Share2 className="h-4 w-4" aria-hidden="true" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           );
