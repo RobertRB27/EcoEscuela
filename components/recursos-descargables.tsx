@@ -141,11 +141,6 @@ export function RecursosDescargables() {
     }
   ];
 
-  // Inicializar recursos al cargar el componente
-  React.useEffect(() => {
-    setRecursos(recursosIniciales);
-  }, []);
-
   const categorias = ['Todas', 'Reciclaje', 'Energía', 'Clima', 'Educación', 'Sostenibilidad', 'Biodiversidad'];
 
   const recursosFiltrados = recursos.filter(recurso => {
