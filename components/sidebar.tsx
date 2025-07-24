@@ -144,21 +144,6 @@ const navigationSections: NavigationSection[] = [
         color: 'text-pink-600 dark:text-pink-400'
       }
     ]
-  },
-  {
-    id: 'support',
-    title: 'Soporte',
-    icon: HelpCircle,
-    color: 'text-gray-600 dark:text-gray-400',
-    items: [
-      {
-        id: 'contacto',
-        label: 'Contacto',
-        icon: Mail,
-        description: 'Contáctanos',
-        color: 'text-pink-600 dark:text-pink-400'
-      }
-    ]
   }
 ];
 
@@ -166,8 +151,8 @@ export function Sidebar({ isOpen, activeSection, setActiveSection }: SidebarProp
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     main: true,
     learning: true,
-    community: false,
-    support: false
+    resources: true,
+    community: false
   });
 
   const toggleSection = (sectionId: string) => {
