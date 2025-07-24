@@ -154,6 +154,7 @@ export function QuizEnergia() {
   const finalizarLeccion = () => {
     const puntuacion = calcularPuntuacion();
     toast({
+     id: "quiz-energia-completado",
       title: "¡Lección Completada! 🎉",
       description: `¡Excelente trabajo! Has completado el quiz de energías renovables con ${puntuacion.porcentaje}% de aciertos. ¡Eres parte de la solución energética del futuro!`,
       duration: 5000,
