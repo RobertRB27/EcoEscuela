@@ -6,30 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Input } from '@/components/ui/input';
-import { 
-  Globe, 
-  Sun, 
-  TreePine, 
-  Wind, 
-  Factory, 
-  Droplets, 
-  Recycle, 
-  Leaf, 
-  Rss, 
-  Clock, 
-  Search, 
-  Filter, 
-  TrendingUp, 
-  Newspaper, 
-  Calendar, 
-  BookOpen, 
-  Eye, 
-  Users, 
-  Heart, 
-  Share2, 
-  ExternalLink, 
-  AlertCircle 
-} from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 
 interface NoticiaAmbiental {
   id: string;
@@ -63,14 +40,14 @@ export function BlogNoticias() {
   const [ultimaActualizacion, setUltimaActualizacion] = useState<Date>(new Date());
 
   const categoriasNoticias: CategoriaNoticia[] = [
-    { id: 'todas', nombre: 'Todas', icono: Globe, color: 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300' },
-    { id: 'clima', nombre: 'Cambio Climático', icono: Sun, color: 'bg-orange-100 text-orange-600 dark:bg-orange-900/20 dark:text-orange-400' },
-    { id: 'conservacion', nombre: 'Conservación', icono: TreePine, color: 'bg-green-100 text-green-600 dark:bg-green-900/20 dark:text-green-400' },
-    { id: 'renovable', nombre: 'Energías Renovables', icono: Wind, color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' },
-    { id: 'contaminacion', nombre: 'Contaminación', icono: Factory, color: 'bg-red-100 text-red-600 dark:bg-red-900/20 dark:text-red-400' },
-    { id: 'agua', nombre: 'Recursos Hídricos', icono: Droplets, color: 'bg-cyan-100 text-cyan-600 dark:bg-cyan-900/20 dark:text-cyan-400' },
-    { id: 'reciclaje', nombre: 'Reciclaje', icono: Recycle, color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400' },
-    { id: 'sostenibilidad', nombre: 'Sostenibilidad', icono: Leaf, color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/20 dark:text-teal-400' }
+    { id: 'todas', nombre: 'Todas', icono: LucideIcons.Globe, color: 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300' },
+    { id: 'clima', nombre: 'Cambio Climático', icono: LucideIcons.Sun, color: 'bg-orange-100 text-orange-600 dark:bg-orange-900/20 dark:text-orange-400' },
+    { id: 'conservacion', nombre: 'Conservación', icono: LucideIcons.TreePine, color: 'bg-green-100 text-green-600 dark:bg-green-900/20 dark:text-green-400' },
+    { id: 'renovable', nombre: 'Energías Renovables', icono: LucideIcons.Wind, color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' },
+    { id: 'contaminacion', nombre: 'Contaminación', icono: LucideIcons.Factory, color: 'bg-red-100 text-red-600 dark:bg-red-900/20 dark:text-red-400' },
+    { id: 'agua', nombre: 'Recursos Hídricos', icono: LucideIcons.Droplets, color: 'bg-cyan-100 text-cyan-600 dark:bg-cyan-900/20 dark:text-cyan-400' },
+    { id: 'reciclaje', nombre: 'Reciclaje', icono: LucideIcons.Recycle, color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400' },
+    { id: 'sostenibilidad', nombre: 'Sostenibilidad', icono: LucideIcons.Leaf, color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/20 dark:text-teal-400' }
   ];
 
   // Simulación de feed RSS/API con noticias ambientales dinámicas
@@ -348,8 +325,8 @@ export function BlogNoticias() {
           Mantente informado con las últimas noticias sobre medio ambiente y sostenibilidad
         </p>
         <div className="flex items-center space-x-2 mt-4 text-sm text-gray-500 dark:text-gray-400">
-          <Rss className="h-4 w-4" aria-hidden="true" />
-          <Clock className="h-4 w-4" aria-hidden="true" />
+          <LucideIcons.Rss className="h-4 w-4" aria-hidden="true" />
+          <LucideIcons.Clock className="h-4 w-4" aria-hidden="true" />
           <span>Última actualización: {ultimaActualizacion.toLocaleDateString('es-ES')} a las {ultimaActualizacion.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}</span>
         </div>
       </div>
@@ -357,7 +334,7 @@ export function BlogNoticias() {
       {/* Búsqueda y filtros */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" aria-hidden="true" />
+          <LucideIcons.Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" aria-hidden="true" />
           <Input
             placeholder="Buscar noticias ambientales..."
             value={terminoBusqueda}
@@ -366,7 +343,7 @@ export function BlogNoticias() {
           />
         </div>
         <div className="flex items-center space-x-2">
-          <Filter className="h-4 w-4 text-gray-500" aria-hidden="true" />
+          <LucideIcons.Filter className="h-4 w-4 text-gray-500" aria-hidden="true" />
           <span className="text-sm text-gray-600 dark:text-gray-400">Filtrar por:</span>
         </div>
       </div>
@@ -400,7 +377,7 @@ export function BlogNoticias() {
       {noticiasDestacadas.length > 0 && (
         <div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-            <TrendingUp className="mr-2 h-6 w-6 text-emerald-600" aria-hidden="true" />
+            <LucideIcons.TrendingUp className="mr-2 h-6 w-6 text-emerald-600" aria-hidden="true" />
             Noticias Destacadas
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -433,11 +410,11 @@ export function BlogNoticias() {
                   <CardHeader>
                     <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-2">
                       <div className="flex items-center space-x-2">
-                        <Newspaper className="h-4 w-4" aria-hidden="true" />
+                        <LucideIcons.Newspaper className="h-4 w-4" aria-hidden="true" />
                         <span>{noticia.fuente}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Calendar className="h-4 w-4" aria-hidden="true" />
+                        <LucideIcons.Calendar className="h-4 w-4" aria-hidden="true" />
                         <span>{formatearFecha(noticia.fechaPublicacion)}</span>
                       </div>
                     </div>
@@ -455,16 +432,16 @@ export function BlogNoticias() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
                         <div className="flex items-center space-x-1">
-                          <BookOpen className="h-4 w-4" aria-hidden="true" />
+                          <LucideIcons.BookOpen className="h-4 w-4" aria-hidden="true" />
                           <span>{noticia.tiempoLectura}</span>
                         </div>
                         <div className="flex items-center space-x-1">
-                          <Eye className="h-4 w-4" aria-hidden="true" />
+                          <LucideIcons.Eye className="h-4 w-4" aria-hidden="true" />
                           <span>{noticia.visualizaciones.toLocaleString()}</span>
                         </div>
                         {noticia.autor && (
                           <div className="flex items-center space-x-1">
-                            <Users className="h-4 w-4" aria-hidden="true" />
+                            <LucideIcons.Users className="h-4 w-4" aria-hidden="true" />
                             <span>{noticia.autor}</span>
                           </div>
                         )}
@@ -480,7 +457,7 @@ export function BlogNoticias() {
                           }}
                           className="text-gray-500 hover:text-red-500 transition-colors duration-200"
                         >
-                          <Heart className="h-4 w-4 mr-1" aria-hidden="true" />
+                          <LucideIcons.Heart className="h-4 w-4 mr-1" aria-hidden="true" />
                           {noticia.likes}
                         </Button>
                         
@@ -493,7 +470,7 @@ export function BlogNoticias() {
                           }}
                           className="text-gray-500 hover:text-blue-500 transition-colors duration-200"
                         >
-                          <Share2 className="h-4 w-4" aria-hidden="true" />
+                          <LucideIcons.Share2 className="h-4 w-4" aria-hidden="true" />
                         </Button>
                         
                         <Button
@@ -505,7 +482,7 @@ export function BlogNoticias() {
                           }}
                         >
                           Leer más
-                          <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
+                          <LucideIcons.ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
                         </Button>
                       </div>
                     </div>
@@ -520,7 +497,7 @@ export function BlogNoticias() {
       {/* Noticias Regulares */}
       <div>
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-          <BookOpen className="mr-2 h-6 w-6 text-emerald-600" aria-hidden="true" />
+          <LucideIcons.BookOpen className="mr-2 h-6 w-6 text-emerald-600" aria-hidden="true" />
           Últimas Noticias
         </h2>
         
@@ -567,7 +544,7 @@ export function BlogNoticias() {
                       <div className="flex items-center space-x-3 text-xs text-gray-500 dark:text-gray-400">
                         <span>{noticia.tiempoLectura}</span>
                         <div className="flex items-center space-x-1">
-                          <Eye className="h-3 w-3" aria-hidden="true" />
+                          <LucideIcons.Eye className="h-3 w-3" aria-hidden="true" />
                           <span>{noticia.visualizaciones.toLocaleString()}</span>
                         </div>
                       </div>
@@ -582,7 +559,7 @@ export function BlogNoticias() {
                           }}
                           className="text-gray-500 hover:text-red-500 transition-colors duration-200 p-1"
                         >
-                          <Heart className="h-3 w-3" aria-hidden="true" />
+                          <LucideIcons.Heart className="h-3 w-3" aria-hidden="true" />
                           <span className="ml-1 text-xs">{noticia.likes}</span>
                         </Button>
                         
@@ -595,7 +572,7 @@ export function BlogNoticias() {
                           }}
                           className="text-gray-500 hover:text-blue-500 transition-colors duration-200 p-1"
                         >
-                          <Share2 className="h-3 w-3" aria-hidden="true" />
+                          <LucideIcons.Share2 className="h-3 w-3" aria-hidden="true" />
                         </Button>
                         
                         <Button
@@ -619,7 +596,7 @@ export function BlogNoticias() {
         ) : (
           <Card className="eco-card">
             <CardContent className="text-center py-12">
-              <AlertCircle className="h-12 w-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
+              <LucideIcons.AlertCircle className="h-12 w-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 No se encontraron noticias
               </h3>
@@ -635,7 +612,7 @@ export function BlogNoticias() {
       <Card className="eco-card bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 border-emerald-200 dark:border-emerald-800">
         <CardContent className="text-center py-8">
           <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-800 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Rss className="h-8 w-8 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+            <LucideIcons.Rss className="h-8 w-8 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
           </div>
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
             ¡Mantente siempre informado!
