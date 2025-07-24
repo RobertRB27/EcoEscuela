@@ -25,7 +25,8 @@ import {
   ChevronDown,
   ChevronRight,
   Target,
-  Leaf
+  Leaf,
+  Play
 } from 'lucide-react';
 import {
   Accordion,

@@ -15,8 +15,10 @@ import {
   ArrowLeft,
   RotateCcw,
   Award,
-  Lightbulb,
-  Target
+  Lightbulb, 
+  Target,
+  Play,
+  Star
 } from 'lucide-react';
 
 interface Pregunta {
@@ -75,48 +77,6 @@ export function QuizReciclaje() {
       explicacion: 'Es importante lavar los envases antes de reciclarlos para eliminar restos de comida que podrían contaminar otros materiales reciclables o dificultar el proceso de reciclaje.'
     }
   ];
-
-  // Preguntas adicionales para diferentes niveles
-  const preguntasAdicionales: Pregunta[] = [
-    {
-      id: 4,
-      pregunta: '¿Cuánto tiempo tarda en descomponerse una botella de plástico en la naturaleza?',
-      imagen: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=250&fit=crop',
-      opciones: [
-        '50-100 años',
-        '200-300 años', 
-        '450-1000 años',
-        '1500-2000 años'
-      ],
-      respuestaCorrecta: 2,
-      explicacion: 'Una botella de plástico puede tardar entre 450 y 1000 años en descomponerse completamente, por eso es tan importante reciclarlas correctamente.'
-    },
-    {
-      id: 5,
-      pregunta: '¿Qué porcentaje del plástico mundial se recicla actualmente?',
-      imagen: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=400&h=250&fit=crop',
-      opciones: [
-        'Menos del 10%',
-        'Aproximadamente 25%',
-        'Cerca del 50%',
-        'Más del 70%'
-      ],
-      respuestaCorrecta: 0,
-      explicacion: 'Sorprendentemente, menos del 10% del plástico producido mundialmente se recicla. La mayoría termina en vertederos o en el medio ambiente.'
-    }
-  ];
-
-  const todasLasPreguntas = [...preguntas, ...preguntasAdicionales];
-  const [nivelSeleccionado, setNivelSeleccionado] = useState<'basico' | 'intermedio' | 'avanzado'>('basico');
-  const [mostrarSeleccionNivel, setMostrarSeleccionNivel] = useState(true);
-  
-  const preguntasSegunNivel = {
-    basico: preguntas.slice(0, 2),
-    intermedio: preguntas,
-    avanzado: todasLasPreguntas
-  };
-  
-  const preguntasActuales = preguntasSegunNivel[nivelSeleccionado];
 
   const manejarSeleccionRespuesta = (indicePregunta: number, indiceOpcion: number) => {
     setRespuestas(prev => ({
