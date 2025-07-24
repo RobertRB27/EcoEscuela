@@ -371,7 +371,7 @@ export function QuizEnergia() {
                 disabled={!estaRespondida}
                 className="bg-yellow-600 hover:bg-yellow-700 text-white"
               >
-                {preguntaActual === preguntasActuales.length - 1 ? 'Ver Resultados' : 'Siguiente'}
+                {preguntaActual === preguntas.length - 1 ? 'Ver Resultados' : 'Siguiente'}
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
