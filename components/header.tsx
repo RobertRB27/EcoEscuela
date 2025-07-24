@@ -43,6 +43,16 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
 
         {/* Right side - Theme Toggle */}
         <div className="flex items-center">
+          <div className="mr-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+              onClick={() => window.location.href = 'https://github.com/RobertRB27/EcoEscuela'}
+            >
+              Ver en GitHub
+            </Button>
+          </div>
           <ThemeToggle />
         </div>
       </div>

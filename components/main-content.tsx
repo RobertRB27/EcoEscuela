@@ -33,6 +33,12 @@ import { QuizClima } from '@/components/quiz-clima';
 import { QuizSostenibilidad } from '@/components/quiz-sostenibilidad';
 import { RevistasAmbientales } from '@/components/revistas-ambientales';
 import { RecursosDescargables } from '@/components/recursos-descargables';
+import { 
+  MessageCircle, 
+  HelpCircle, 
+  Calendar,
+  Heart
+} from 'lucide-react';
 
 interface MainContentProps {
   activeSection: string;

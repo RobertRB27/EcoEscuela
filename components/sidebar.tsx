@@ -19,7 +19,8 @@ import {
   Settings,
   HelpCircle,
   Newspaper,
-  Download
+  Download,
+  MessageCircle
 } from 'lucide-react';
 import {
   Collapsible,
