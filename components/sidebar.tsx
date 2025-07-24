@@ -100,21 +100,70 @@ const navigationSections: NavigationSection[] = [
     ]
   },
   {
-    id: 'community',
-    title: 'Comunidad',
-    icon: Users,
+    id: 'resources',
+    title: 'Recursos',
+    icon: BookOpen,
     color: 'text-purple-600 dark:text-purple-400',
     items: [
       {
         id: 'blog',
-        label: 'Blog',
+        label: 'Blog Ambiental',
         icon: BookOpen,
-        description: 'Artículos y noticias',
+        description: 'Noticias actualizadas',
         color: 'text-purple-600 dark:text-purple-400'
+      },
+      {
+        id: 'revistas',
+        label: 'Revistas',
+        icon: Newspaper,
+        description: 'Publicaciones especializadas',
+        color: 'text-indigo-600 dark:text-indigo-400'
+      },
+      {
+        id: 'recursos',
+        label: 'Descargas',
+        icon: Download,
+        description: 'PDFs e infografías',
+        color: 'text-teal-600 dark:text-teal-400'
       }
     ]
   },
   {
+    id: 'community',
+    title: 'Comunidad',
+    icon: Users,
+    color: 'text-orange-600 dark:text-orange-400',
+    items: [
+      {
+        id: 'contacto',
+        label: 'Contacto',
+        icon: Mail,
+        description: 'Contáctanos',
+        color: 'text-pink-600 dark:text-pink-400'
+      }
+    ]
+  }
+];
+
+// Agregar imports necesarios
+import { 
+  Home, 
+  Recycle, 
+  Zap, 
+  CloudRain, 
+  Leaf,
+  BookOpen,
+  Mail,
+  Sparkles,
+  ChevronDown,
+  ChevronRight,
+  GraduationCap,
+  Users,
+  Settings,
+  HelpCircle,
+  Newspaper,
+  Download
+} from 'lucide-react';
     id: 'support',
     title: 'Soporte',
     icon: HelpCircle,

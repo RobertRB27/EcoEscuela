@@ -28,6 +28,13 @@ import { CourseQuiz } from '@/components/course-quiz';
 import { ClimateInteractiveSection } from '@/components/climate-interactive-section';
 import { RenewableEnergySection } from '@/components/renewable-energy-section';
 import { BlogContent } from '@/components/blog-content';
+import { QuizReciclaje } from '@/components/quiz-reciclaje';
+import { QuizEnergia } from '@/components/quiz-energia';
+import { QuizClima } from '@/components/quiz-clima';
+import { QuizSostenibilidad } from '@/components/quiz-sostenibilidad';
+import { RevistasAmbientales } from '@/components/revistas-ambientales';
+import { RecursosDescargables } from '@/components/recursos-descargables';
+import { BlogNoticias } from '@/components/blog-noticias';
 
 interface MainContentProps {
   activeSection: string;
@@ -334,8 +341,8 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
               </p>
             </div>
             
-            {/* Tarjetas Interactivas */}
-            <RecyclingInteractiveCards />
+            {/* Quiz de Reciclaje */}
+            <QuizReciclaje />
           </div>
         );
 
@@ -380,7 +387,7 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
                   <ArrowRight className="h-4 w-4 rotate-180" aria-hidden="true" />
                   <span>Volver a la introducción</span>
                 </Button>
-                <RenewableEnergySection />
+                <QuizEnergia />
               </div>
             )}
           </div>
@@ -427,7 +434,7 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
                   <ArrowRight className="h-4 w-4 rotate-180" aria-hidden="true" />
                   <span>Volver a la introducción</span>
                 </Button>
-                <ClimateInteractiveSection />
+                <QuizClima />
               </div>
             )}
           </div>
@@ -442,29 +449,23 @@ export function MainContent({ activeSection, sidebarOpen }: MainContentProps) {
                 Descubre cómo vivir de manera más sostenible y responsable con el medio ambiente
               </p>
             </div>
-            <Card className="eco-card">
-              <CardHeader>
-                <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/20 rounded-xl flex items-center justify-center mb-4">
-                  <Leaf className="h-8 w-8 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
-                </div>
-                <CardTitle className="dark:text-white text-xl">Vida Sostenible</CardTitle>
-                <CardDescription className="dark:text-gray-400 text-responsive">
-                  Aprende hábitos y prácticas para un estilo de vida más sostenible
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button className="eco-button">
-                  <ArrowRight className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Vivir sostenible
-                </Button>
-              </CardContent>
-            </Card>
+            <QuizSostenibilidad />
           </div>
         );
 
       case 'blog':
         return (
-          <BlogContent />
+          <BlogNoticias />
+        );
+        
+      case 'revistas':
+        return (
+          <RevistasAmbientales />
+        );
+        
+      case 'recursos':
+        return (
+          <RecursosDescargables />
         );
 
       case 'contacto':
